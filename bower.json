@@ -1,9 +1,9 @@
 {
-  "name": "NerdQuiz",
+  "name": "nerdquiz",
   "description": "",
   "main": "",
   "authors": [
-    "HiroAgustin <hiroagustin@gmail.com>"
+    "HiroAgustin <me@adiaz.uy>"
   ],
   "license": "MIT",
   "homepage": "",
@@ -16,6 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "reveal.js": "^3.4.1"
+    "animate.css": "^3.5.2",
+    "jquery": "^3.1.1",
+    "materialize": "^0.98.0"
   }
 }
