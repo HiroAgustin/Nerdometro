@@ -1,0 +1,24 @@
+.HolyGrail {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.HolyGrail-body {
+  display: flex;
+  flex: 1;
+}
+
+.HolyGrail-content {
+  flex: 1;
+}
+
+.question {
+  display: flex;
+  margin-bottom: 0;
+  flex: 0 0 100vw;
+}
+
+.answer {
+  cursor: pointer;
+}

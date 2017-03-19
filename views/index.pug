@@ -1,5 +1,6 @@
 extends layout
+include mixins/question
 
 block content
-  h1= title
-  p Welcome to #{title}
+  each question, index in questions
+    +question(question, index, questions.length)

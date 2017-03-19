@@ -1,0 +1,7 @@
+mixin answer(answer, index)
+  .answer.card.hoverable.waves-effect.waves-light
+    .card-image
+      img.responsive-img(src='images/sample-1.jpg')
+      span.card-title #{String.fromCharCode(65 + index)}
+    .card-content
+      p #{answer}
