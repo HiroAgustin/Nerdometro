@@ -26,3 +26,8 @@ html {
 .answer {
   cursor: pointer;
 }
+
+.answer-0 { animation-delay: 0s; }
+.answer-1 { animation-delay: .25s; }
+.answer-2 { animation-delay: .5s; }
+.answer-3 { animation-delay: .75s; }

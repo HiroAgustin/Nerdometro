@@ -4,8 +4,8 @@ mixin question(question, index, total)
   .question.row
     .col.m6.valign-wrapper
       section.center-align
-        h3 Pregunta #{index + 1}/#{total}
-        h2.white-text #{question.predicate}
+        h3.animated.fadeInDown Pregunta #{index + 1}/#{total}
+        h2.animated.fadeInDown.white-text #{question.predicate}
     .col.m6.valign-wrapper
       .row
         each answer, index in question.answers
