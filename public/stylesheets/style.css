@@ -1,3 +1,7 @@
+html {
+  background: linear-gradient(to right, #64B5F6, #64B5F6 50%, #fafafa 50%, #fafafa)
+}
+
 .HolyGrail {
   display: flex;
   min-height: 100vh;
