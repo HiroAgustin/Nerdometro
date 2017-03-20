@@ -2,11 +2,10 @@ include answer
 
 mixin question(question, index, total)
   .question.row
-    .col.m6.valign-wrapper
-      section.center-align
-        h3.animated.fadeInDown Pregunta #{index + 1}/#{total}
-        h2.animated.fadeInDown.white-text #{question.predicate}
-    .col.m6.valign-wrapper
+    section.predicate.center-align.col.m6
+      h4.animated.fadeInDown Pregunta #{index + 1}/#{total}
+      h3.animated.fadeInDown.white-text #{question.predicate}
+    .answers.col.m6.valign-wrapper
       .row
         each answer, index in question.answers
           .col.m12.l6

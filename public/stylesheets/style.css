@@ -1,4 +1,4 @@
-html {
+body {
   background: linear-gradient(to right, #64B5F6, #64B5F6 50%, #fafafa 50%, #fafafa)
 }
 
@@ -21,6 +21,12 @@ html {
   display: flex;
   margin-bottom: 0;
   flex: 0 0 100vw;
+}
+
+.predicate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .answer {
