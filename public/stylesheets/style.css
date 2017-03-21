@@ -13,10 +13,13 @@
   flex: 1;
 }
 
+.page {
+  flex: 0 0 100vw;
+}
+
 .question {
   display: flex;
   margin-bottom: 0;
-  flex: 0 0 100vw;
 }
 
 .predicate {
