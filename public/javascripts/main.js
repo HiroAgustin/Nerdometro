@@ -18,7 +18,7 @@ var Main = {
 
     this
       .listen()
-      .setStep(this.getStepFromPath() || 0);
+      .showHome();
 
     return this;
   },
@@ -66,11 +66,6 @@ var Main = {
 
   getUrlPath: function getUrlPath () {
     return location.origin + '/step/' + this.step;
-  },
-
-  getStepFromPath: function getStepFromPath () {
-    var path = location.pathname || '';
-    return _.contains(path, '/') ? parseInt(path.split('/')[2], 10) : null;
   },
 
   onPopState: function onPopState (event) {
