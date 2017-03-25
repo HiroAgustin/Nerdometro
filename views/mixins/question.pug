@@ -1,12 +1,9 @@
 include answer
 
-mixin question(question, index, total)
-  .page.question.row
-    section.predicate.col.s12.m6.center-align.blue.lighten-2
-      h4.animated.fadeInDown Pregunta #{index + 1}/#{total}
-      h3.animated.fadeInDown.white-text #{question.predicate}
-    .answers.col.s12.m6.valign-wrapper
-      .row
-        each answer, index in question.answers
-          .col.m12.l6
-            +answer(answer, index)
+mixin question(question)
+  h3.animated.fadeInDown.center-align #{question.predicate}
+  .answers
+    .row
+      each answer, index in question.answers
+        .col.m12.l6
+          +answer(answer, index)

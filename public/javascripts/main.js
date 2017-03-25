@@ -8,9 +8,14 @@ $.fn.extend({
 
 var Main = {
 
+  $auth: $('#auth'),
   $pages: $('.page'),
   $questions: $('.question'),
   $answers: $('.answer'),
+
+  $preComputing: $('#js-pre-computing'),
+  $postComputing: $('#js-post-computing'),
+
   results: [],
   step: 0,
 
@@ -18,6 +23,7 @@ var Main = {
 
     this
       .listen()
+      .initProgressBar()
       .showHome();
 
     return this;
@@ -41,16 +47,90 @@ var Main = {
           .nextStep()
       });
 
+    this.$auth
+      .off('submit.register')
+      .on('submit.register', function (event) {
+        event.preventDefault();
+        // Store data
+        self.initQuiz();
+      })
+
     $('#js-start')
       .off('click.start')
       .on('click.start', function (event) {
         event.preventDefault();
-        self.showQuestion(0);
+        self.showAuth();
+      });
+
+    $('#js-skip')
+      .off('click.skip')
+      .on('click.skip', function (event) {
+        event.preventDefault();
+        self.initQuiz();
       });
 
     window.onpopstate = this.onPopState.bind(this);
 
     return this;
+  },
+
+  initQuiz: function initQuiz () {
+    var total = 3,
+        duration = 1800,
+        progress = this.createProgressCircle({
+          id: 'js-pre-computing-progress',
+          duration: duration,
+          text: function (value){
+            return Math.ceil(total - value);
+          },
+          maxValue: total,
+          radius: 200,
+          width: 30
+        });
+
+    this.setStep(this.$preComputing.index());
+
+    setTimeout(function () {
+      this.showQuestion(0);
+    }.bind(this), duration)
+
+    progress.update(total);
+
+    return this;
+  },
+
+  initProgressBar: function initProgressBar () {
+    var total = this.$questions.length;
+
+    this.progressBar = this.createProgressCircle({
+      id: 'js-progress',
+      maxValue: total,
+      text: function (value){
+        return Math.ceil(value) + '/' + total;
+      }
+    });
+
+    return this;
+  },
+
+  createProgressCircle: function createProgressCircle (config) {
+    return Circles.create(_.defaults(config, {
+      radius: 60,
+      value: 0,
+      maxValue: 100,
+      width: 20,
+      text: function (value){
+        return value + '%';
+      },
+      colors: ['#D3B6C6', '#4B253A'],
+      duration: 400,
+      wrpClass: 'circles-wrp',
+      textClass: 'circles-text',
+      valueStrokeClass: 'circles-valueStroke',
+      maxValueStrokeClass: 'circles-maxValueStroke',
+      styleWrapper: true,
+      styleText: true
+    }));
   },
 
   getState: function getState () {
@@ -114,9 +194,14 @@ var Main = {
     return this;
   },
 
+  showAuth: function showAuth () {
+    this.setStep(1);
+    return this;
+  },
+
   showQuestion: function showQuestion (index) {
     if (index < this.$questions.length)
-      this.setStep(index + 1);
+      this.setStep(this.$pages.filter('.question').eq(index).index());
 
     return this;
   },

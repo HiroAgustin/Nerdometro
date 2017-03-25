@@ -1,0 +1,23 @@
+.key {
+  border: 2px solid #333;
+  border-radius: 5px;
+  display: inline-block;
+  height: 50px;
+  line-height: 52px;
+  margin: 3px 1px;
+  text-align: center;
+  text-transform: uppercase;
+	transition: .5s;
+  width: 50px;
+}
+
+/* Space bar */
+.k32 {
+  width: 346px;
+}
+
+.active {
+  border: 2px solid #fd0;
+  color: #fd0;
+  transition: 0s;
+}

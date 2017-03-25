@@ -1,17 +1,30 @@
 extends layout
 include mixins/question
+include mixins/auth
 
 block content
-  section.page.home.container.center-align
-    h1 Bienvenido
-    p.flow-text.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  section.page.container.home.center-align
+    h3 Orgullo Nerd Presenta
 
-    a#js-start.waves-effect.waves-light.btn-large Empezar
+    h1 Nerdómetro
+
+    a#js-start.waves-effect.waves-light.btn-large Empezá el test
+
+  section.page.container.auth
+    +auth()
+
+  section#js-pre-computing.page.container.computing
+    h2 Preparando Preguntas
+
+    #js-pre-computing-progress.circle
 
   each question, index in questions
-    +question(question, index, questions.length)
+    section.page.container.question
+      +question(question)
 
-  .page.results
+  #js-progress.circle.progress-bar
+
+  section#js-post-computing.page.container.computing
+    h2 Calculando Nerdlevel
+
+  section.page.container.results

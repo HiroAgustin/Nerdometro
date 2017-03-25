@@ -14,12 +14,28 @@
 }
 
 .page {
+  display: flex;
   flex: 0 0 100vw;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .question {
   display: flex;
   margin-bottom: 0;
+}
+
+.progress-bar {
+  display: none;
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.circles-maxValueStroke {
+  fill: white !important;
 }
 
 .predicate {
