@@ -16,7 +16,7 @@
   width: 346px;
 }
 
-.active {
+.key.active {
   border: 2px solid #fd0;
   color: #fd0;
   transition: 0s;

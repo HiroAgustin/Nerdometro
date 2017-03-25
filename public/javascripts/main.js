@@ -8,7 +8,8 @@ $.fn.extend({
 
 var Main = {
 
-  $auth: $('#auth'),
+  auth: Auth,
+
   $pages: $('.page'),
   $questions: $('.question'),
   $answers: $('.answer'),
@@ -46,14 +47,6 @@ var Main = {
           .setAnswer($(this).data('value'))
           .nextStep()
       });
-
-    this.$auth
-      .off('submit.register')
-      .on('submit.register', function (event) {
-        event.preventDefault();
-        // Store data
-        self.initQuiz();
-      })
 
     $('#js-start')
       .off('click.start')

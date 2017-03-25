@@ -21,6 +21,7 @@
     "materialize": "^0.98.0",
     "material-design-icons-dist": "^1.1.0",
     "underscore": "^1.8.3",
-    "circles": "*"
+    "circles": "*",
+    "PubSubJS": "pubsub-js#^1.5.4"
   }
 }
