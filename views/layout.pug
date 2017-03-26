@@ -2,7 +2,7 @@ doctype html
 html(lang='es')
   head
     title= 'Nerd Quiz'
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
     link(rel='stylesheet', href='/bower_components/animate.css/animate.min.css')
     link(rel='stylesheet', href='/bower_components/material-design-icons-dist/material-icons.css')
@@ -13,6 +13,7 @@ html(lang='es')
     main.HolyGrail-body
       block content
 
+    script(src='/bower_components/PubSubJS/src/pubsub.js')
     script(src='/bower_components/circles/circles.min.js')
     script(src='/bower_components/jquery/dist/jquery.min.js')
     script(src='/bower_components/underscore/underscore-min.js')

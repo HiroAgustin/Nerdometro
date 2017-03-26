@@ -8,8 +8,6 @@ $.fn.extend({
 
 var Main = {
 
-  auth: Auth,
-
   $pages: $('.page'),
   $questions: $('.question'),
   $answers: $('.answer'),
@@ -61,6 +59,10 @@ var Main = {
         event.preventDefault();
         self.initQuiz();
       });
+
+    PubSub.subscribe('user:register', function (label, user) {
+      self.initQuiz();
+    });
 
     window.onpopstate = this.onPopState.bind(this);
 

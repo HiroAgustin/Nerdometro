@@ -1,6 +1,23 @@
+.keyboard {
+  background: white;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.keyboard ul:first-child {
+  margin-top: 0;
+}
+
+.keyboard ul:last-child {
+  margin-bottom: 0;
+}
+
 .key {
   border: 2px solid #333;
   border-radius: 5px;
+  cursor: pointer;
   display: inline-block;
   height: 50px;
   line-height: 52px;
@@ -11,13 +28,17 @@
   width: 50px;
 }
 
+/* Backspace */
+.k8 {
+  width: 80px;
+}
+
 /* Space bar */
 .k32 {
   width: 346px;
 }
 
-.key.active {
-  border: 2px solid #fd0;
-  color: #fd0;
-  transition: 0s;
+/* Enter */
+.numeric .k13 {
+  width: 80px;
 }

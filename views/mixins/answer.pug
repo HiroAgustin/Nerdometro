@@ -1,5 +1,5 @@
 mixin answer(answer, index)
-  .answer(class='answer-' + index).card.hoverable.waves-effect.waves-light.animated.flipInY&attributes({ 'data-value': index })
+  .answer(class='answer-' + index, data-value=index).card.hoverable.waves-effect.waves-light.animated.flipInY
     .card-image
       img.responsive-img(src=answer.img)
       span.card-title #{String.fromCharCode(65 + index)}

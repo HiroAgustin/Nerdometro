@@ -1,51 +1,57 @@
 mixin keyboard(type)
-  .keyboard.center-align
-    if type
+  if type
+    .keyboard.alphabetic.center-align.hide
       ul
-        li.key.k81 q
-        li.key.k87 w
-        li.key.k69 e
-        li.key.k82 r
-        li.key.k84 t
-        li.key.k89 y
-        li.key.k85 u
-        li.key.k73 i
-        li.key.k79 o
-        li.key.k80 p
+        li.key.k81(data-key=81) q
+        li.key.k87(data-key=87) w
+        li.key.k69(data-key=69) e
+        li.key.k82(data-key=82) r
+        li.key.k84(data-key=84) t
+        li.key.k89(data-key=89) y
+        li.key.k85(data-key=85) u
+        li.key.k73(data-key=73) i
+        li.key.k79(data-key=79) o
+        li.key.k80(data-key=80) p
+        li.key.k8(data-key=8) &larr;
 
       ul
-        li.key.k65 a
-        li.key.k83 s
-        li.key.k68 d
-        li.key.k70 f
-        li.key.k71 g
-        li.key.k72 h
-        li.key.k74 j
-        li.key.k75 k
-        li.key.k76 l
-        li.key.k241 ñ
+        li.key.k65(data-key=65) a
+        li.key.k83(data-key=83) s
+        li.key.k68(data-key=68) d
+        li.key.k70(data-key=70) f
+        li.key.k71(data-key=71) g
+        li.key.k72(data-key=72) h
+        li.key.k74(data-key=74) j
+        li.key.k75(data-key=75) k
+        li.key.k76(data-key=76) l
+        li.key.k241(data-key=209) ñ
 
       ul
-        li.key.k90 z
-        li.key.k88 x
-        li.key.k67 c
-        li.key.k86 v
-        li.key.k66 b
-        li.key.k78 n
-        li.key.k77 m
-        li.key OK
+        li.key.k90(data-key=90) z
+        li.key.k88(data-key=88) x
+        li.key.k67(data-key=67) c
+        li.key.k86(data-key=86) v
+        li.key.k66(data-key=66) b
+        li.key.k78(data-key=78) n
+        li.key.k77(data-key=77) m
+        li.key.k13(data-key=13) OK
 
       ul
-        li.key.k32 &nbsp;
-    else
+        li.key.k32(data-key=32) &nbsp;
+  else
+    .keyboard.numeric.center-align.hide
       ul
-        li.key.k49 1
-        li.key.k50 2
-        li.key.k51 3
-        li.key.k52 4
-        li.key.k53 5
-        li.key.k54 6
-        li.key.k55 7
-        li.key.k56 8
-        li.key.k57 9
-        li.key.k48 0
+        li.key.k49(data-key=49) 1
+        li.key.k50(data-key=50) 2
+        li.key.k51(data-key=51) 3
+        li.key.k52(data-key=52) 4
+        li.key.k53(data-key=53) 5
+        li.key.k54(data-key=54) 6
+        li.key.k55(data-key=55) 7
+        li.key.k56(data-key=56) 8
+        li.key.k57(data-key=57) 9
+        li.key.k48(data-key=48) 0
+        li.key.k8(data-key=8) &larr;
+
+      ul
+        li.key.k13(data-key=13) OK

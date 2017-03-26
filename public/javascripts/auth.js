@@ -4,8 +4,7 @@ var Auth = {
   $name: $('#js-nombre'),
   $tel: $('#js-tel'),
 
-  $textKeyboard: $('#js-text-keyboard'),
-  $numKeyboard: $('#js-num-keyboard'),
+  $keyboards: $('.keyboard'),
 
   init: function init () {
     this
@@ -16,37 +15,65 @@ var Auth = {
 
   listen: function listen () {
 
-    this.$name
-      .focus(this.showTextKeyboard.bind(this));
+    this.$name.focus(this.showKeyboard.bind(this));
+    this.$tel.focus(this.showKeyboard.bind(this));
 
-    this.$tel
-      .focus(this.showTelKeyboard.bind(this));
-
-    this.$form
-      .off('submit.register')
-      .on('submit.register', function (event) {
-        event.preventDefault();
-        // Store data
-        self.initQuiz();
-      });
+    this.$form.submit(this.onSubmit.bind(this));
+    this.$keyboards.click(this.onType.bind(this));
 
     return this;
   },
 
-  showTextKeyboard: function showTextKeyboard () {
-    this.$numKeyboard
-      .addClass('hide');
-
-    this.$textKeyboard
-      .removeClass('hide');
+  onSubmit: function onSubmit (event) {
+    event.preventDefault();
+    PubSub.publish('user:register', this.serializeForm());
+    return this;
   },
 
-  showTelKeyboard: function showTelKeyboard () {
-    this.$textKeyboard
-      .addClass('hide');
+  serializeForm: function serializeForm () {
+    return _.chain(this.$form.serializeArray())
+      .map(_.values)
+      .object()
+      .value();
+  },
 
-    this.$numKeyboard
+  onType: function onType (event) {
+    var $target = $(event.target),
+        $container = $target.closest('.input-field'),
+        $input = $container.find('input'),
+        key = $target.data('key');
+
+    event.stopPropagation();
+
+    switch (key) {
+      case 8:
+        $input.val($input.val().slice(0, -1)).focus();
+        break;
+      case 13:
+        this.hideKeyboards();
+        $container.next().find('input').focus();
+        break;
+      default:
+        $input.val($input.val() + String.fromCharCode(key)).focus();
+    }
+
+    return this;
+  },
+
+  showKeyboard: function showKeyboard (event) {
+    this.hideKeyboards();
+
+    $(event.target)
+      .closest('.input-field')
+      .find('.keyboard')
       .removeClass('hide');
+
+    return this;
+  },
+
+  hideKeyboards: function hideKeyboards () {
+    this.$keyboards.addClass('hide');
+    return this;
   }
 };
 
