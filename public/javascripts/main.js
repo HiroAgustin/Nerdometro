@@ -7,20 +7,14 @@ $.fn.extend({
 });
 
 var Main = {
-
-  $pages: $('.page'),
-  $questions: $('.question'),
-  $answers: $('.answer'),
-
-  $preComputing: $('#js-pre-computing'),
-  $postComputing: $('#js-post-computing'),
-
   results: [],
   step: 0,
 
   init: function init () {
 
     this
+      .shuffle()
+      .setDom()
       .listen()
       .initProgressBar()
       .showHome();
@@ -31,6 +25,27 @@ var Main = {
   reset: function reset () {
     this.results = [];
     this.showHome();
+
+    return this;
+  },
+
+  shuffle: function shuffleAnswers () {
+    $('.question').shuffle().each(function () {
+      $(this).find('.answer').shuffle();
+    });
+
+    return this;
+  },
+
+  setDom: function setDom () {
+    _.extend(this, {
+      $pages: $('.page'),
+      $questions: $('.question'),
+      $answers: $('.answer'),
+
+      $preComputing: $('#js-pre-computing'),
+      $postComputing: $('#js-post-computing')
+    });
 
     return this;
   },

@@ -2,6 +2,4 @@ mixin answer(answer, index)
   .answer(class='answer-' + index, data-value=index).card.hoverable.waves-effect.waves-light.animated.flipInY
     .card-image
       img.responsive-img(src=answer.img)
-      span.card-title #{String.fromCharCode(65 + index)}
-    .card-content.center-align
-      p.flow-text #{answer.label}
+      span.card-title #{answer.label}
