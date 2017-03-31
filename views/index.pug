@@ -3,30 +3,36 @@ include mixins/question
 include mixins/auth
 
 block content
-  section.page.container.home.center-align
+  section.page.home
     h3 Orgullo Nerd Presenta
 
     h1 Nerdómetro
 
-    a#js-start.waves-effect.waves-light.btn-large Empezá el test
+    a#js-start Empezá el test
 
-  section.page.container.auth
+  section.page.auth
     +auth()
 
-  section#js-pre-computing.page.container.computing
+  section#js-pre-computing.page.computing
     h2 Preparando Preguntas
 
     #js-pre-computing-progress.circle
 
   each question, index in questions
-    section.page.container.question
+    section.page.question
+      header.page__header
+        img.brand(src='/images/brand.png')
+        img.logo(src='/images/logo.png')
+
       +question(question)
+
+      footer.page__footer
 
   #js-progress.circle.progress-bar
 
-  section#js-post-computing.page.container.computing
+  section#js-post-computing.page.computing
     h2 Calculando Nerdlevel
 
-  section.page.container.results
+  section.page.results
 
-  section.page.container.ad
+  section.page.ad

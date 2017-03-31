@@ -1,6 +1,6 @@
 $.fn.extend({
   animateCSS: function (name) {
-    this.addClass('animated ' + name).one('animationend', function () {
+    return this.addClass('animated ' + name).one('animationend', function () {
       $(this).removeClass('animated ' + name);
     });
   }
@@ -16,7 +16,6 @@ var Main = {
       .shuffle()
       .setDom()
       .listen()
-      .initProgressBar()
       .showHome();
 
     return this;
@@ -55,11 +54,7 @@ var Main = {
 
     this.$answers
       .off('click.answer')
-      .on('click.answer', function (event) {
-        self
-          .setAnswer($(this).data('value'))
-          .nextStep()
-      });
+      .on('click.answer', this.selectAnswer.bind(this));
 
     $('#js-start')
       .off('click.start')
@@ -79,8 +74,6 @@ var Main = {
       self.initQuiz();
     });
 
-    window.onpopstate = this.onPopState.bind(this);
-
     return this;
   },
 
@@ -98,27 +91,13 @@ var Main = {
           width: 30
         });
 
-    this.setStep(this.$preComputing.index());
+    this.showPage(this.$preComputing.index());
 
     setTimeout(function () {
       this.showQuestion(0);
     }.bind(this), duration)
 
     progress.update(total);
-
-    return this;
-  },
-
-  initProgressBar: function initProgressBar () {
-    var total = this.$questions.length;
-
-    this.progressBar = this.createProgressCircle({
-      id: 'js-progress',
-      maxValue: total,
-      text: function (value){
-        return Math.ceil(value) + '/' + total;
-      }
-    });
 
     return this;
   },
@@ -150,36 +129,20 @@ var Main = {
     };
   },
 
-  getTitle: function getTitle () {
-    return 'Nerd Quiz - Step ' + this.step;
-  },
+  selectAnswer: function selectAnswer (event) {
+    var self = this,
+        $answer = $(event.target).closest('.answer');
 
-  getUrlPath: function getUrlPath () {
-    return location.origin + '/step/' + this.step;
-  },
+    this.setAnswer($answer.data('value'));
 
-  onPopState: function onPopState (event) {
-    var state = event.state;
-
-    if (state)
-      this.setStep(state.step, true);
-    else
-      this.showHome();
-  },
-
-  setStep: function setStep (updated, silent) {
-    var step = this.step = parseInt(updated, 10),
-        state = this.getState(),
-        title = this.getTitle(),
-        url = this.getUrlPath(),
-        previous = history.state;
-
-    if (_.isEmpty(previous) || silent)
-      history.replaceState(state, title, url);
-    else if (previous.step !== state.step)
-      history.pushState(state, title, url);
-
-    this.showPage(step);
+    $answer
+      .addClass('answer--isSelected')
+      .animateCSS('tada')
+      .siblings()
+      .removeClass('answer--isSelected')
+      .animateCSS('bounceOut')
+      .last()
+      .one('animationend', this.nextQuestion.bind(this));
 
     return this;
   },
@@ -190,34 +153,53 @@ var Main = {
   },
 
   showPage: function showPage (index) {
+    this.step = index;
     this.$pages.hide().eq(index).show();
     return this;
   },
 
-  nextStep: function nextStep () {
-    this.setStep(this.step + 1);
+  nextPage: function nextPage () {
+    this.showPage(this.step + 1);
     return this;
   },
 
   showHome: function showHome () {
-    this.setStep(0);
+    this.showPage(0);
     return this;
   },
 
   showAuth: function showAuth () {
-    this.setStep(1);
+    this.showPage(1);
     return this;
   },
 
   showQuestion: function showQuestion (index) {
-    if (index < this.$questions.length)
-      this.setStep(this.$pages.filter('.question').eq(index).index());
+    var $question = this.$pages.filter('.question').eq(index);
+
+    if (!$question)
+      return this;
+
+    this.showPage($question.index());
+
+    $question.find('.answer').animateCSS('flipInY');
+
+    return this;
+  },
+
+  nextQuestion: function nextQuestion () {
+    var step = this.step,
+        $questions = this.$pages.filter('.question');
+
+    if (step < $questions.length)
+      this.showQuestion(step - $questions.first().index() + 1);
+    else
+      this.nextPage();
 
     return this;
   },
 
   showResult: function showResult () {
-    this.setStep(this.$questions.length);
+    this.showPage(this.$pages.length);
     return this;
   }
 };

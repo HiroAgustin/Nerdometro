@@ -1,5 +1,6 @@
 .keyboard {
   background: white;
+  display: none;
   left: 50%;
   position: absolute;
   transform: translateX(-50%);

@@ -1,9 +1,8 @@
 include answer
 
 mixin question(question)
-  h3.animated.fadeInDown.center-align #{question.predicate}
-  .answers
-    .row
-      each answer, index in question.answers
-        .col.m12.l6
-          +answer(answer, index)
+  h1.question__predicate.animated.fadeInDown #{question.predicate}
+
+  .question__answers
+    each answer in question.answers
+      +answer(answer)

@@ -1,21 +1,19 @@
 include keyboard
 
 mixin auth()
-  p.flow-text Antes de comenzar registrate para para participar de un sorteo por unos lentes!
+  p Antes de comenzar registrate para para participar de un sorteo por unos lentes!
 
   form#js-auth
     .input-field
-      i.material-icons.prefix account_circle
-      input#js-nombre.validate(name='nombre', type='text', autocomplete='off')
+      input#js-nombre(name='nombre', type='text', autocomplete='off')
       label(for='js-nombre') Nombre
       +keyboard(true)
 
     .input-field
-      i.material-icons.prefix phone
-      input#js-tel.validate(name='tel', type='tel', autocomplete='off')
+      input#js-tel(name='tel', type='tel', autocomplete='off')
       label(for='js-tel') Celular
       +keyboard()
 
-    button.btn.btn-large.waves-effect.waves-light(type='submit') Registrarme
+    button(type='submit') Registrarme
 
   a#js-skip(href='#') No quiero registrarme

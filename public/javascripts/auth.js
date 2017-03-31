@@ -7,9 +7,7 @@ var Auth = {
   $keyboards: $('.keyboard'),
 
   init: function init () {
-    this
-      .listen();
-
+    this.listen();
     return this;
   },
 

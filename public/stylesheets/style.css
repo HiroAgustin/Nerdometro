@@ -1,3 +1,23 @@
+html {
+  color: white;
+  font-family: Montserrat;
+  font-feature-settings: 'kern' 1;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	// http://css-tricks.com/snippets/css/remove-gray-highlight-when-tapping-links-in-mobile-safari/
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  background-image: linear-gradient(140deg, #5159f5, #049f9d);
+}
+
 .HolyGrail {
   display: flex;
   min-height: 100vh;
@@ -17,12 +37,14 @@
   display: flex;
   flex: 0 0 100vw;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-.question {
+.page__header {
+  align-items: center;
   display: flex;
-  margin-bottom: 0;
+  padding: 1.5em 3em;
+  justify-content: space-between;
 }
 
 .progress-bar {
@@ -43,12 +65,3 @@
   flex-direction: column;
   justify-content: space-around;
 }
-
-.answer {
-  cursor: pointer;
-}
-
-.answer-0 { animation-delay: 0s; }
-.answer-1 { animation-delay: .25s; }
-.answer-2 { animation-delay: .5s; }
-.answer-3 { animation-delay: .75s; }
