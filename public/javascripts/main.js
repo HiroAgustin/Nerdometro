@@ -137,12 +137,13 @@ var Main = {
 
     $answer
       .addClass('answer--isSelected')
-      .animateCSS('tada')
+      .addClass('animated tada')
+      .one('animationend', function () {
+        self.nextQuestion();
+      })
       .siblings()
       .removeClass('answer--isSelected')
-      .animateCSS('bounceOut')
-      .last()
-      .one('animationend', this.nextQuestion.bind(this));
+      .addClass('animated bounceOut');
 
     return this;
   },
@@ -174,14 +175,20 @@ var Main = {
   },
 
   showQuestion: function showQuestion (index) {
-    var $question = this.$pages.filter('.question').eq(index);
-
-    if (!$question)
-      return this;
+    var $question = this.$pages.filter('.question').eq(index),
+        $answers = $question.find('.answer');
 
     this.showPage($question.index());
 
-    $question.find('.answer').animateCSS('flipInY');
+    $answers
+      .css('animation-delay', function () {
+        return $(this).index() * .25 + 's';
+      })
+      .animateCSS('flipInY')
+      .last()
+      .one('animationend', function () {
+        $answers.css('animation-delay', '0s');
+      });
 
     return this;
   },
