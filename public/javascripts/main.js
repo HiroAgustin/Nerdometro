@@ -79,47 +79,15 @@ var Main = {
 
   initQuiz: function initQuiz () {
     var total = 3,
-        duration = 1800,
-        progress = this.createProgressCircle({
-          id: 'js-pre-computing-progress',
-          duration: duration,
-          text: function (value){
-            return Math.ceil(total - value);
-          },
-          maxValue: total,
-          radius: 200,
-          width: 30
-        });
+        duration = 1800;
 
     this.showPage(this.$preComputing.index());
 
     setTimeout(function () {
       this.showQuestion(0);
-    }.bind(this), duration)
-
-    progress.update(total);
+    }.bind(this), duration);
 
     return this;
-  },
-
-  createProgressCircle: function createProgressCircle (config) {
-    return Circles.create(_.defaults(config, {
-      radius: 60,
-      value: 0,
-      maxValue: 100,
-      width: 20,
-      text: function (value){
-        return value + '%';
-      },
-      colors: ['#D3B6C6', '#4B253A'],
-      duration: 400,
-      wrpClass: 'circles-wrp',
-      textClass: 'circles-text',
-      valueStrokeClass: 'circles-valueStroke',
-      maxValueStrokeClass: 'circles-maxValueStroke',
-      styleWrapper: true,
-      styleText: true
-    }));
   },
 
   getState: function getState () {
