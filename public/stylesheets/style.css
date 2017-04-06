@@ -33,31 +33,21 @@ body {
   flex: 1;
 }
 
-.page {
-  display: flex;
-  flex: 0 0 100vw;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.page__header {
+.site__header {
   align-items: center;
   display: flex;
   padding: 1.5em 3em;
   justify-content: space-between;
 }
 
-.progress-bar {
-  display: none;
-  bottom: 0;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  z-index: 10;
+.page {
+  flex: 0 0 100vw;
 }
 
-.circles-maxValueStroke {
-  fill: white !important;
+.page__question {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .predicate {

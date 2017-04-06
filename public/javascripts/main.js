@@ -11,7 +11,6 @@ var Main = {
   step: 0,
 
   init: function init () {
-
     this
       .shuffle()
       .setDom()
@@ -29,7 +28,7 @@ var Main = {
   },
 
   shuffle: function shuffleAnswers () {
-    $('.question').shuffle().each(function () {
+    $('.page__question').shuffle().each(function () {
       $(this).find('.answer').shuffle();
     });
 
@@ -39,7 +38,7 @@ var Main = {
   setDom: function setDom () {
     _.extend(this, {
       $pages: $('.page'),
-      $questions: $('.question'),
+      $questions: $('.page__question'),
       $answers: $('.answer'),
 
       $preComputing: $('#js-pre-computing'),
@@ -143,7 +142,7 @@ var Main = {
   },
 
   showQuestion: function showQuestion (index) {
-    var $question = this.$pages.filter('.question').eq(index),
+    var $question = this.$pages.filter('.page__question').eq(index),
         $answers = $question.find('.answer');
 
     this.showPage($question.index());
@@ -163,7 +162,7 @@ var Main = {
 
   nextQuestion: function nextQuestion () {
     var step = this.step,
-        $questions = this.$pages.filter('.question');
+        $questions = this.$pages.filter('.page__question');
 
     if (step < $questions.length)
       this.showQuestion(step - $questions.first().index() + 1);
