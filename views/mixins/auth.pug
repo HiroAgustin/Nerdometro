@@ -1,19 +1,20 @@
 include keyboard
 
 mixin auth()
-  p Antes de comenzar registrate para para participar de un sorteo por unos lentes!
+  .authForm
+    p.authForm__heading
+      | Antes de comenzar registrate para participar <br>
+      | de un sorteo por unos lentes al final del evento.
 
-  form#js-auth
-    .input-field
-      input#js-nombre(name='nombre', type='text', autocomplete='off')
-      label(for='js-nombre') Nombre
-      +keyboard(true)
+    form#js-auth
+      .authForm__input
+        input#js-nombre(name='nombre', type='text', autocomplete='off', placeholder='Tu Nombre')
+        +keyboard(true)
 
-    .input-field
-      input#js-tel(name='tel', type='tel', autocomplete='off')
-      label(for='js-tel') Celular
-      +keyboard()
+      .authForm__input
+        input#js-tel(name='tel', type='tel', autocomplete='off', placeholder='Tu Celular')
+        +keyboard()
 
-    button(type='submit') Registrarme
-
-  a#js-skip(href='#') No quiero registrarme
+      .authForm__footer
+        button(type='submit') Registrarme
+        a#js-skip(href='#') No quiero registrarme

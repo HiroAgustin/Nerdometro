@@ -1,0 +1,38 @@
+.authForm {
+  max-width: 50%;
+}
+
+.authForm__heading {
+  font-size: 1.5em;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.authForm__input {
+  margin-bottom: 40px;
+}
+
+.authForm__input input {
+  border: 3px solid white;
+  color: white;
+  font-size: 1.5em;
+  outline: none;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.authForm__input input::placeholder {
+  color: white;
+}
+
+.authForm__input input:focus::placeholder {
+  color: transparent;
+}
+
+.authForm__footer {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+}
