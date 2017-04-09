@@ -32,7 +32,9 @@
 }
 
 .authForm__footer {
-  align-items: flex-end;
+  align-items: center;
   display: flex;
+  flex-direction: column;
+  height: 10em;
   justify-content: space-between;
 }
