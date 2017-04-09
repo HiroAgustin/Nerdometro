@@ -36,7 +36,7 @@ var Auth = {
   },
 
   onType: function onType (event) {
-    var $target = $(event.target),
+    var $target = $(event.target).closest('.key'),
         $container = $target.closest('.authForm__input'),
         $input = $container.find('input'),
         key = $target.data('key');
