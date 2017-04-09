@@ -6,7 +6,7 @@ router.get('/', (req, res, next) =>
   res.render('index', {
     questions: [
       {
-        predicate: 'Plan de viernes de noche…',
+        predicate: 'Tu plan de viernes:',
         answers: [
           {
             label: 'Salir',
@@ -14,99 +14,99 @@ router.get('/', (req, res, next) =>
             img: '/images/ballena.svg'
           },
           {
-            label: 'Cine o TV',
-            value: 0,
+            label: 'Cine o Netflix',
+            value: 40,
             img: '/images/ballena.svg'
           },
           {
             label: 'Videojuegos',
-            value: 0,
+            value: 70,
             img: '/images/ballena.svg'
           },
           {
             label: 'Ver animés',
-            value: 0,
+            value: 100,
             img: '/images/ballena.svg'
           }
         ]
       },
       {
-        predicate: 'No podés vivir sin…',
+        predicate: 'No podés vivir sin:',
         answers: [
-          {
-            label: 'Laptop',
-            value: 0,
-            img: '/images/ballena.svg'
-          },
-          {
-            label: 'Celular',
-            value: 0,
-            img: '/images/ballena.svg'
-          },
           {
             label: 'Heladera',
             value: 0,
             img: '/images/ballena.svg'
           },
           {
-            label: 'Compu de escritorio con dos monitores',
-            value: 0,
+            label: 'Notebook',
+            value: 75,
+            img: '/images/ballena.svg'
+          },
+          {
+            label: 'Celular',
+            value: 20,
+            img: '/images/ballena.svg'
+          },
+          {
+            label: 'Compu de escritorio ¡con tres monitores!',
+            value: 100,
             img: '/images/ballena.svg'
           }
         ]
       },
       {
-        predicate: 'Sabés…',
+        predicate: 'Dominás el:',
         answers: [
           {
             label: 'Inglés o Francés',
-            value: 0,
+            value: 28,
             img: '/images/ballena.svg'
           },
           {
             label: 'Klingon, élfico o dothraki',
-            value: 0,
+            value: 100,
             img: '/images/ballena.svg'
           },
           {
             label: 'C++',
-            value: 0,
+            value: 80,
             img: '/images/ballena.svg'
           },
           {
-            label: 'Ninguno',
+            label: 'Yo hablar español del barrio',
             value: 0,
             img: '/images/ballena.svg'
           }
         ]
       },
       {
-        predicate: 'Leés…',
+        predicate: 'Leés:',
         answers: [
           {
-            label: 'Poco y nada',
+            label: 'Los posts de mis amigos en Fb',
             value: 0,
             img: '/images/ballena.svg'
           },
           {
-            label: 'Uno de autoayuda',
-            value: 0,
+            label: 'El best seller de moda o uno de autoayuda',
+            value: 47,
             img: '/images/ballena.svg'
           },
           {
-            label: 'Novelas todo el tiempo',
-            value: 0,
+            label: 'Cuentos, novelas, ensayos, poesía... lo que venga',
+            value: 66,
             img: '/images/ballena.svg'
           },
           {
-            label: 'Comics, el Hobbit y El Silmarillion',
-            value: 0,
+            label: '¡Aguanten los comics, Tolkien y el Silmarillion!',
+            value: 100,
             img: '/images/ballena.svg'
           }
         ]
       },
       {
-        predicate: 'Tenés cubo mágico…',
+        predicate: 'Tenés cubo Rubik',
         answers: [
           {
             label: 'No',
@@ -115,48 +115,48 @@ router.get('/', (req, res, next) =>
           },
           {
             label: 'Sí, pero nunca pude armarlo',
-            value: 0,
+            value: 33,
             img: '/images/ballena.svg'
           },
           {
             label: 'Lo armé con un tutorial',
-            value: 0,
+            value: 84,
             img: '/images/ballena.svg'
           },
           {
-            label: '¿Cuántas veces querés que lo arme y desarme?',
-            value: 0,
+            label: '¿Cuántas veces querés que lo arme?',
+            value: 100,
             img: '/images/ballena.svg'
           }
         ]
       },
       {
-        predicate: 'Tus amistades te suelen pedir…',
+        predicate: 'Habilidades especiales:',
         answers: [
           {
-            label: 'Plata',
+            label: 'Una vez comí chivito y no me enchastré',
             value: 0,
             img: '/images/ballena.svg'
           },
           {
-            label: 'Ropa',
-            value: 0,
+            label: 'Organizo colectivos ¡y logro que la gente me pague!',
+            value: 40,
             img: '/images/ballena.svg'
           },
           {
-            label: 'Que les arregle la compu',
-            value: 0,
+            label: 'Todos me piden que les arregle la compu',
+            value: 70,
             img: '/images/ballena.svg'
           },
           {
-            label: 'Debatir sobre Android o iOS',
-            value: 0,
+            label: 'Me sé el árbol genealógico de los Lannister',
+            value: 100,
             img: '/images/ballena.svg'
           }
         ]
       },
       {
-        predicate: 'Deportes…',
+        predicate: '¿​Deporte preferido?',
         answers: [
           {
             label: 'Fútbol',
@@ -165,42 +165,42 @@ router.get('/', (req, res, next) =>
           },
           {
             label: 'Basket',
-            value: 0,
+            value: 15,
             img: '/images/ballena.svg'
           },
           {
             label: 'Esgrima',
-            value: 0,
+            value: 80,
             img: '/images/ballena.svg'
           },
           {
             label: 'Ajedrez',
-            value: 0,
+            value: 100,
             img: '/images/ballena.svg'
           }
         ]
       },
       {
-        predicate: 'Jugás a…',
+        predicate: 'Qué juegos te entusiasman más:',
         answers: [
           {
-            label: 'FIFA',
+            label: 'Ludo, damas, robamontón y conga',
             value: 0,
             img: '/images/ballena.svg'
           },
           {
-            label: 'Candy Crush',
-            value: 0,
+            label: 'La Viborita del Nokia 1100',
+            value: 28,
             img: '/images/ballena.svg'
           },
           {
             label: 'World of Warcraft',
-            value: 0,
+            value: 91,
             img: '/images/ballena.svg'
           },
           {
             label: 'Juegos de rol',
-            value: 0,
+            value: 100,
             img: '/images/ballena.svg'
           }
         ]
@@ -215,17 +215,17 @@ router.get('/', (req, res, next) =>
           },
           {
             label: 'Gandhi, Mandela y los que salvan ballenas',
-            value: 0,
+            value: 33,
             img: '/images/ballena.svg'
           },
           {
             label: 'Neil deGrass Tyson',
-            value: 0,
+            value: 66,
             img: '/images/neil.svg'
           },
           {
             label: 'Cualquiera que sepa el nombre de los 150 Pokemones originales',
-            value: 0,
+            value: 100,
             img: '/images/pika.svg'
           }
         ]
@@ -234,23 +234,23 @@ router.get('/', (req, res, next) =>
         predicate: 'Para una ocasión especial te vestís…',
         answers: [
           {
-            label: 'Casual, sencillito',
+            label: 'Como cualquier día',
             value: 0,
             img: '/images/ballena.svg'
           },
           {
-            label: 'Lo que es moda, no incomoda',
-            value: 0,
+            label: 'Formal',
+            value: 23,
             img: '/images/ballena.svg'
           },
           {
-            label: 'Me dicen fashion victim',
-            value: 0,
+            label: 'Soy fashion victim',
+            value: 75,
             img: '/images/ballena.svg'
           },
           {
             label: 'Con un cosplay',
-            value: 0,
+            value: 100,
             img: '/images/ballena.svg'
           }
         ]
