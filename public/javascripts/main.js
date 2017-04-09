@@ -20,13 +20,6 @@ var Main = {
     return this;
   },
 
-  reset: function reset () {
-    this.results = [];
-    this.showHome();
-
-    return this;
-  },
-
   shuffle: function shuffleAnswers () {
     $('.page__question').shuffle().each(function () {
       $(this).find('.answer').shuffle();
