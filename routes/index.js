@@ -11,22 +11,22 @@ router.get('/', (req, res, next) =>
           {
             label: 'Salir',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Cine o TV',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Videojuegos',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Ver animés',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           }
         ]
       },
@@ -36,22 +36,22 @@ router.get('/', (req, res, next) =>
           {
             label: 'Laptop',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Celular',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Heladera',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Compu de escritorio con dos monitores',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           }
         ]
       },
@@ -61,22 +61,22 @@ router.get('/', (req, res, next) =>
           {
             label: 'Inglés o Francés',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Klingon, élfico o dothraki',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'C++',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Ninguno',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           }
         ]
       },
@@ -86,22 +86,22 @@ router.get('/', (req, res, next) =>
           {
             label: 'Poco y nada',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Uno de autoayuda',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Novelas todo el tiempo',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Comics, el Hobbit y El Silmarillion',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           }
         ]
       },
@@ -111,22 +111,22 @@ router.get('/', (req, res, next) =>
           {
             label: 'No',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Sí, pero nunca pude armarlo',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Lo armé con un tutorial',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: '¿Cuántas veces querés que lo arme y desarme?',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           }
         ]
       },
@@ -136,22 +136,22 @@ router.get('/', (req, res, next) =>
           {
             label: 'Plata',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Ropa',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Que les arregle la compu',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Debatir sobre Android o iOS',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           }
         ]
       },
@@ -161,22 +161,22 @@ router.get('/', (req, res, next) =>
           {
             label: 'Fútbol',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Basket',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Esgrima',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Ajedrez',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           }
         ]
       },
@@ -186,22 +186,22 @@ router.get('/', (req, res, next) =>
           {
             label: 'FIFA',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Candy Crush',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'World of Warcraft',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Juegos de rol',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           }
         ]
       },
@@ -211,22 +211,22 @@ router.get('/', (req, res, next) =>
           {
             label: 'El Lucho',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/luis.svg'
           },
           {
-            label: 'Lio',
+            label: 'Gandhi, Mandela y los que salvan ballenas',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
-            label: 'Neil DeGrass Tyson',
+            label: 'Neil deGrass Tyson',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/neil.svg'
           },
           {
-            label: 'Wozniak',
+            label: 'Cualquiera que sepa el nombre de los 150 Pokemones originales',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/pika.svg'
           }
         ]
       },
@@ -236,22 +236,22 @@ router.get('/', (req, res, next) =>
           {
             label: 'Casual, sencillito',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Lo que es moda, no incomoda',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Me dicen fashion victim',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           },
           {
             label: 'Con un cosplay',
             value: 0,
-            img: '/images/ballenas.png'
+            img: '/images/ballena.svg'
           }
         ]
       }
