@@ -37,7 +37,7 @@ var Auth = {
 
   onType: function onType (event) {
     var $target = $(event.target),
-        $container = $target.closest('.input-field'),
+        $container = $target.closest('.authForm__input'),
         $input = $container.find('input'),
         key = $target.data('key');
 
@@ -62,7 +62,7 @@ var Auth = {
     this.hideKeyboards();
 
     $(event.target)
-      .closest('.input-field')
+      .closest('.authForm__input')
       .find('.keyboard')
       .removeClass('hide');
 

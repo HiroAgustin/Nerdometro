@@ -12,6 +12,10 @@ body {
   background-image: linear-gradient(140deg, #5159f5, #049f9d);
 }
 
+.hide {
+  display: none;
+}
+
 .HolyGrail {
   display: flex;
   min-height: 100vh;

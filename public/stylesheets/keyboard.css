@@ -1,45 +1,63 @@
 .keyboard {
-  background: white;
-  display: none;
   left: 50%;
+  padding: .5em .75em;
   position: absolute;
   transform: translateX(-50%);
   z-index: 2;
 }
 
-.keyboard ul:first-child {
-  margin-top: 0;
+.keyboard::before {
+  background: white;
+  border-radius: 1em;
+  bottom: 0;
+  content: '';
+  display: block;
+  left: 0;
+  opacity: .75;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
 }
 
-.keyboard ul:last-child {
-  margin-bottom: 0;
+.keyboard ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .key {
-  border: 2px solid #333;
-  border-radius: 5px;
+  align-items: center;
+  background: white;
+  border-radius: 2px;
+  color: #232730;
   cursor: pointer;
-  display: inline-block;
-  height: 50px;
-  line-height: 52px;
-  margin: 3px 1px;
+  display: flex;
+  font-size: 1.5em;
+  font-weight: 300;
+  height: 2.5em;
+  justify-content: center;
+  margin: 2px;
   text-align: center;
   text-transform: uppercase;
-	transition: .5s;
-  width: 50px;
+  width: 3em;
+  z-index: 2;
 }
 
 /* Backspace */
 .k8 {
-  width: 80px;
+  width: 5em;
 }
 
 /* Space bar */
 .k32 {
-  width: 346px;
+  text-transform: lowercase;
+  width: 15em;
 }
 
 /* Enter */
 .numeric .k13 {
-  width: 80px;
+  /*width: 80px;*/
 }
