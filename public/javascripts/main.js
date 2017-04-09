@@ -93,6 +93,9 @@ var Main = {
     var self = this,
         $answer = $(event.target).closest('.answer');
 
+    if ($answer.parent().has('.answer.animated').length)
+      return this;
+
     this.setAnswer($answer.data('value'));
 
     $answer
