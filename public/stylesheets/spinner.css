@@ -1,0 +1,32 @@
+.spinner {
+  position: relative;
+}
+
+.spinner__label {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  font-size: 8em;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.spinner__image {
+  background-image: linear-gradient(140deg, #ae2383, #d76d85);
+  border-radius: 20px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+}
+
+.spinner__image img {
+  opacity: .25;
+}
+
+.spinner__image--selected {
+  background-image: linear-gradient(140deg, #5159f5, #049f9d);
+}

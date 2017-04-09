@@ -14,9 +14,15 @@ block content
     +auth()
 
   section.page.page__computing
-    h2 Preparando Preguntas
+    #js-spinner.spinner
+      .spinner__label
+      each question in questions
+        each answer in question.answers
+          .spinner__image.hide
+            img(src=answer.img)
 
-  each question, index in questions
+
+  each question in questions
     section.page.page__question
       +question(question)
 

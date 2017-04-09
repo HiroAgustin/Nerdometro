@@ -25,6 +25,8 @@ var Main = {
       $(this).find('.answer').shuffle();
     });
 
+    $('.computing__spinner').find('.answer__image').shuffle();
+
     return this;
   },
 
@@ -34,8 +36,7 @@ var Main = {
       $questions: $('.page__question'),
       $answers: $('.answer'),
 
-      $preComputing: $('#js-pre-computing'),
-      $postComputing: $('#js-post-computing')
+      $spinner: $('#js-spinner')
     });
 
     return this;
@@ -69,15 +70,39 @@ var Main = {
     return this;
   },
 
+  tickSpinner: function tickSpinner (config) {
+    this.$spinner
+      .find('.spinner__label')
+      .html(config.total - config.current)
+      .end()
+      .find('.spinner__image')
+      .addClass('hide')
+      .eq(config.current)
+      .removeClass('hide');
+
+    config.current++;
+
+    return this;
+  },
+
+  endSpinner: function endSpinner (timer) {
+    clearInterval(timer);
+    this.showQuestion(0);
+    return this;
+  },
+
   initQuiz: function initQuiz () {
-    var total = 3,
-        duration = 1800;
+    var config = { total: 3, current: 0, }
+        timer = setInterval(function () {
+          if (config.current < config.total)
+            this.tickSpinner(config);
+          else
+            this.endSpinner(timer);
+        }.bind(this), 750);
 
-    this.showPage(this.$preComputing.index());
-
-    setTimeout(function () {
-      this.showQuestion(0);
-    }.bind(this), duration);
+    this
+      .showPage(2)
+      .tickSpinner(config);;
 
     return this;
   },
