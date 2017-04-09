@@ -2,7 +2,7 @@
   left: 50%;
   padding: .5em .75em;
   position: absolute;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(.5em);
   z-index: 2;
 }
 
@@ -13,7 +13,6 @@
   content: '';
   display: block;
   left: 0;
-  opacity: .75;
   position: absolute;
   right: 0;
   top: 0;
@@ -30,7 +29,9 @@
 
 .key {
   align-items: center;
+  animation-duration: .5s;
   background: white;
+  border: 1px solid #cfcfcf;
   border-radius: 2px;
   color: #232730;
   cursor: pointer;

@@ -55,6 +55,8 @@ var Auth = {
         $input.val($input.val() + String.fromCharCode(key)).focus();
     }
 
+    $target.animateCSS('pulse');
+
     return this;
   },
 
