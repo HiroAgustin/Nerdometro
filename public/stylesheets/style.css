@@ -52,12 +52,20 @@ body {
   top: 0;
 }
 
+.page__0 .logo {
+  display: none;
+}
+
 .page {
   align-items: center;
   display: flex;
   flex: 0 0 100vw;
   flex-direction: column;
   justify-content: center;
+}
+
+.page__home {
+  justify-content: space-around;
 }
 
 .predicate {

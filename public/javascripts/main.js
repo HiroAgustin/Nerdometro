@@ -32,6 +32,8 @@ var Main = {
 
   setDom: function setDom () {
     _.extend(this, {
+      $body: $('body'),
+
       $pages: $('.page'),
       $questions: $('.page__question'),
       $answers: $('.answer'),
@@ -145,6 +147,13 @@ var Main = {
   showPage: function showPage (index) {
     this.step = index;
     this.$pages.hide().eq(index).show();
+
+    this.$body
+      .removeClass(function (index, className) {
+        return (className.match(/(^|\s)page__\S+/g) || []).join(' ');
+      })
+      .addClass('page__' + index)
+
     return this;
   },
 
