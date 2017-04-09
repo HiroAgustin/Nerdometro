@@ -1,0 +1,15 @@
+.progress {
+  display: flex;
+}
+
+.progress__step {
+  border: white 2px solid;
+  border-radius: 100%;
+  display: block;
+  height: 1em;
+  width: 1em;
+}
+
+.progress__step--active {
+  background: white;
+}

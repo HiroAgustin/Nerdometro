@@ -25,8 +25,6 @@ var Main = {
       $(this).find('.answer').shuffle();
     });
 
-    $('.computing__spinner').find('.answer__image').shuffle();
-
     return this;
   },
 
@@ -78,6 +76,7 @@ var Main = {
       .html(config.total - config.current)
       .end()
       .find('.spinner__image')
+      .shuffle()
       .addClass('hide')
       .eq(config.current)
       .removeClass('hide')

@@ -8,11 +8,17 @@ html(lang='es')
     link(rel='stylesheet', href='/bower_components/sanitize-css/sanitize.css')
     link(rel='stylesheet', href='/stylesheets/questions.css')
     link(rel='stylesheet', href='/stylesheets/keyboard.css')
+    link(rel='stylesheet', href='/stylesheets/progress.css')
     link(rel='stylesheet', href='/stylesheets/spinner.css')
     link(rel='stylesheet', href='/stylesheets/form.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body.HolyGrail
-    block content
+    header.site__header
+      img.brand(src='/images/brand.svg')
+      img.logo(src='/images/logo.svg')
+
+    main.HolyGrail-body
+      block content
 
     script(src='/bower_components/PubSubJS/src/pubsub.js')
     script(src='/bower_components/jquery/dist/jquery.min.js')

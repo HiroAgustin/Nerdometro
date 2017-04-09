@@ -3,38 +3,35 @@ include mixins/question
 include mixins/auth
 
 block content
-  header.site__header
-    img.brand(src='/images/brand.svg')
-    img.logo(src='/images/logo.svg')
+  section.page.page__home
+    img(src='/images/introducing.svg')
+    img(src='/images/big-logo.svg')
 
-  main.HolyGrail-body
-    section.page.page__home
-      img(src='/images/introducing.svg')
-      img(src='/images/big-logo.svg')
+    button#js-start.button Comenzar
 
-      button#js-start.button Comenzar
+  section.page.page__auth
+    +auth()
 
-    section.page.page__auth
-      +auth()
+  section.page.page__computing
+    #js-spinner.spinner
+      .spinner__label
+      each question in questions
+        each answer in question.answers
+          .spinner__image.hide
+            img(src=answer.img)
 
-    section.page.page__computing
-      #js-spinner.spinner
-        .spinner__label
+
+  each question, index in questions
+    section.page.page__question
+      +question(question)
+
+      .progress
         each question in questions
-          each answer in question.answers
-            .spinner__image.hide
-              img(src=answer.img)
+          .progress__step
 
+  section.page.page__computing
+    h2 Calculando Nivel de Nerd
 
-    each question in questions
-      section.page.page__question
-        +question(question)
+  section.page.page__results
 
-    section.page.page__computing
-      h2 Calculando Nivel de Nerd
-
-    section.page.page__results
-
-    section.page.page__ad
-
-  footer.site__footer
+  section.page.page__ad
