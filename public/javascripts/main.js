@@ -78,7 +78,8 @@ var Main = {
       .find('.spinner__image')
       .addClass('hide')
       .eq(config.current)
-      .removeClass('hide');
+      .removeClass('hide')
+      .animateCSS('bounceIn');
 
     config.current++;
 
@@ -98,7 +99,7 @@ var Main = {
             this.tickSpinner(config);
           else
             this.endSpinner(timer);
-        }.bind(this), 750);
+        }.bind(this), 1000);
 
     this
       .showPage(2)
