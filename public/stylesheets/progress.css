@@ -1,13 +1,42 @@
 .progress {
+  bottom: 0;
   display: flex;
+  justify-content: space-between;
+  left: 50%;
+  max-width: 50em;
+  position: absolute;
+  transform: translate3d(-50%, -5em, 0);
+  width: 75%;
+}
+
+.progress::before,
+.progress::after {
+  background: white;
+  content: '';
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.progress::after {
+  height: 3px;
+  right: 0;
+}
+
+.progress::before {
+  height: 5px;
 }
 
 .progress__step {
-  border: white 2px solid;
+  background: #069D9F;
+  border: white 3px solid;
   border-radius: 100%;
   display: block;
-  height: 1em;
-  width: 1em;
+  height: 1.5em;
+  width: 1.5em;
+  z-index: 2;
 }
 
 .progress__step--active {
