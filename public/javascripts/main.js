@@ -194,7 +194,7 @@ var Main = {
     var step = this.step,
         $questions = this.$pages.filter('.page__question');
 
-    if (step < $questions.length)
+    if (step < $questions.last().index())
       this.showQuestion(step - $questions.first().index() + 1);
     else
       this.nextPage();
