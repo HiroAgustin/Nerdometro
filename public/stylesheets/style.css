@@ -9,7 +9,9 @@ a {
 }
 
 body {
-  background: linear-gradient(140deg, #5159f5, #049f9d);
+  /*background: linear-gradient(140deg, #5159f5, #049f9d);*/
+  background: url('/images/background.png') no-repeat;
+  background-size: cover;
 }
 
 .hide {
