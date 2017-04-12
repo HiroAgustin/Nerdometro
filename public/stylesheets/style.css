@@ -9,7 +9,7 @@ a {
 }
 
 body {
-  background-image: linear-gradient(140deg, #5159f5, #049f9d);
+  background: linear-gradient(140deg, #5159f5, #049f9d);
 }
 
 .hide {
@@ -80,10 +80,26 @@ body {
   flex-direction: row;
 }
 
+.page--result {
+  flex-direction: row;
+}
+
 .predicate {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.heading {
+
+}
+
+.heading--primary {
+
+}
+
+.heading--secondary {
+
 }
 
 .computing__header {
@@ -101,4 +117,18 @@ body {
   font-size: 4em;
   font-weight: normal;
   margin-top: 0;
+}
+
+.result__header {
+  max-width: 30em;
+  margin-right: 10em;
+}
+
+.result__heading {
+  font-size: 4em;
+}
+
+.result__copy {
+  font-size: 2em;
+  font-weight: 300;
 }

@@ -1,0 +1,21 @@
+.nerdBar {
+  border: 1.5em rgba(255, 255, 255, .20) solid;
+  display: flex;
+  flex-direction: column;
+  height: 30em;
+  justify-content: flex-end;
+  padding: 1em;
+  width: 20em;
+}
+
+.nerdBar__label {
+  font-size: 4em;
+  margin: 0 0 -.5em;
+  text-align: center;
+  z-index: 2;
+}
+
+.nerdBar__content {
+  background: linear-gradient(140deg, #ae2383, #d76d85);
+  height: 50%;
+}
