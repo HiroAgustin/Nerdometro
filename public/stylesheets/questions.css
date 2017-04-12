@@ -8,7 +8,6 @@
 .question__answers {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 120px;
   justify-content: center;
 }
 

@@ -25,6 +25,8 @@ var Main = {
       $(this).find('.answer').shuffle();
     });
 
+    $('.progress__step').removeClass('progress__step--active');
+
     return this;
   },
 
@@ -36,7 +38,8 @@ var Main = {
       $questions: $('.page--question'),
       $answers: $('.answer'),
 
-      $spinner: $('#js-spinner')
+      $spinner: $('#js-spinner'),
+      $progress: $('#js-progress'),
     });
 
     return this;
@@ -104,7 +107,8 @@ var Main = {
 
     this
       .showPage(2)
-      .tickSpinner(config);;
+      .tickSpinner(config)
+      .nextProgress();
 
     return this;
   },
@@ -116,21 +120,33 @@ var Main = {
     };
   },
 
+  nextProgress: function nextProgress () {
+    var $questions = this.$pages.filter('.page--question'),
+        index = this.step - $questions.first().index() + 1;
+
+    this.$progress
+      .attr('data-length', (index + 1) / $questions.length * 100)
+      .find('.progress__step')
+      .eq(index)
+      .addClass('progress__step--active');
+
+    return this;
+  },
+
   selectAnswer: function selectAnswer (event) {
-    var self = this,
-        $answer = $(event.target).closest('.answer');
+    var $answer = $(event.target).closest('.answer');
 
     if ($answer.parent().has('.answer.animated').length)
       return this;
 
-    this.setAnswer($answer.data('value'));
+    this
+      .setAnswer($answer.data('value'))
+      .nextProgress();
 
     $answer
       .addClass('answer--isSelected')
       .addClass('animated tada')
-      .one('animationend', function () {
-        self.nextQuestion();
-      })
+      .one('animationend', this.nextQuestion.bind(this))
       .siblings()
       .removeClass('answer--isSelected')
       .addClass('animated bounceOut');

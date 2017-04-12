@@ -13,6 +13,7 @@
 .progress::after {
   background: white;
   content: '';
+  height: 3px;
   left: 0;
   position: absolute;
   top: 50%;
@@ -21,13 +22,25 @@
 }
 
 .progress::after {
-  height: 3px;
   right: 0;
 }
 
 .progress::before {
   height: 5px;
+  transition: width 1s ease-in-out .25s;
+  will-change: width;
 }
+
+.progress[data-length="10"]::before { width: 0%; }
+.progress[data-length="20"]::before { width: 11%; }
+.progress[data-length="30"]::before { width: 22%; }
+.progress[data-length="40"]::before { width: 33%; }
+.progress[data-length="50"]::before { width: 44%; }
+.progress[data-length="60"]::before { width: 55%; }
+.progress[data-length="70"]::before { width: 66%; }
+.progress[data-length="80"]::before { width: 77%; }
+.progress[data-length="90"]::before { width: 88%; }
+.progress[data-length="100"]::before { width: 100%; }
 
 .progress__step {
   background: #069D9F;
@@ -35,7 +48,9 @@
   border-radius: 100%;
   display: block;
   height: 1.5em;
+  transition: background .25s ease-in 1s;
   width: 1.5em;
+  will-change: background;
   z-index: 2;
 }
 
