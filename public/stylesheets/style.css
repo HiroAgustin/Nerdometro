@@ -9,8 +9,7 @@ a {
 }
 
 body {
-  /*background: linear-gradient(140deg, #5159f5, #049f9d);*/
-  background: url('/images/background.png') no-repeat;
+  background: url('/images/background.png') center top no-repeat;
   background-size: cover;
 }
 
@@ -54,10 +53,6 @@ body {
   top: 0;
 }
 
-.page--home .logo {
-  display: none;
-}
-
 .progress {
   display: none;
 }
@@ -76,6 +71,10 @@ body {
 
 .page--home {
   justify-content: space-around;
+}
+
+.page--home .logo {
+  opacity: 0;
 }
 
 .page--computing {
