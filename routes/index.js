@@ -174,7 +174,7 @@ router.get('/', (req, res, next) =>
             img: '/images/answers/pregunta-7_respuesta-3.svg'
           },
           {
-            label: 'Ajedrez',
+            label: 'Clasificar estrellas por características espectrales',
             value: 100,
             img: '/images/answers/pregunta-7_respuesta-4.svg'
           }
