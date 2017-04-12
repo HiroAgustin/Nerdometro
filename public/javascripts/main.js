@@ -21,7 +21,7 @@ var Main = {
   },
 
   shuffle: function shuffleAnswers () {
-    $('.page__question').shuffle().each(function () {
+    $('.page--question').shuffle().each(function () {
       $(this).find('.answer').shuffle();
     });
 
@@ -33,7 +33,7 @@ var Main = {
       $body: $('body'),
 
       $pages: $('.page'),
-      $questions: $('.page__question'),
+      $questions: $('.page--question'),
       $answers: $('.answer'),
 
       $spinner: $('#js-spinner')
@@ -144,14 +144,14 @@ var Main = {
   },
 
   showPage: function showPage (index) {
+    var $page = this.$pages.hide().eq(index).show();
     this.step = index;
-    this.$pages.hide().eq(index).show();
 
     this.$body
-      .removeClass(function (index, className) {
-        return (className.match(/(^|\s)page__\S+/g) || []).join(' ');
+      .removeClass(function (index, name) {
+        return (name.match(/(^|\s)page--\S+/g) || []).join(' ');
       })
-      .addClass('page__' + index)
+      .addClass('page--' + $page.data('label'));
 
     return this;
   },
@@ -172,7 +172,7 @@ var Main = {
   },
 
   showQuestion: function showQuestion (index) {
-    var $question = this.$pages.filter('.page__question').eq(index),
+    var $question = this.$pages.filter('.page--question').eq(index),
         $answers = $question.find('.answer');
 
     this.showPage($question.index());
@@ -192,7 +192,7 @@ var Main = {
 
   nextQuestion: function nextQuestion () {
     var step = this.step,
-        $questions = this.$pages.filter('.page__question');
+        $questions = this.$pages.filter('.page--question');
 
     if (step < $questions.last().index())
       this.showQuestion(step - $questions.first().index() + 1);

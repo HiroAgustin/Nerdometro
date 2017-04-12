@@ -8,16 +8,16 @@ block content
     img.logo(src='/images/logo.svg')
 
   main.HolyGrail-body
-    section.page.page__home
+    section.page.page--home(data-label='home')
       img(src='/images/introducing.svg')
       img(src='/images/big-logo.svg')
 
       button#js-start.button Comenzar
 
-    section.page.page__auth
+    section.page.page--form(data-label='form')
       +auth()
 
-    section.page.page__computing
+    section.page.page--computing(data-label='computing')
       #js-spinner.spinner
         .spinner__label
         each question in questions
@@ -27,18 +27,17 @@ block content
 
 
     each question, index in questions
-      section.page.page__question
+      section.page.page--question(data-label='question')
         +question(question)
 
-    section.page.page__computing
+    section.page.page--computing(data-label='computing')
       h2 Calculando Nivel de Nerd
 
-    section.page.page__results
+    section.page.page--result(data-label='result')
 
-    section.page.page__ad
+    section.page.page--ad(data-label='ad')
 
   footer.site__footer
-
-  .progress
-    each question, step in questions
-      .progress__step
+    .progress
+      each question, step in questions
+        .progress__step

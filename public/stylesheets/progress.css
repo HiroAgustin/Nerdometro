@@ -1,6 +1,6 @@
 .progress {
   bottom: 0;
-  display: flex;
+  display: none;
   justify-content: space-between;
   left: 50%;
   max-width: 50em;

@@ -52,8 +52,16 @@ body {
   top: 0;
 }
 
-.page__0 .logo {
+.page--home .logo {
   display: none;
+}
+
+.progress {
+  display: none;
+}
+
+.page--question .progress {
+  display: flex;
 }
 
 .page {
@@ -64,7 +72,7 @@ body {
   justify-content: center;
 }
 
-.page__home {
+.page--home {
   justify-content: space-around;
 }
 
