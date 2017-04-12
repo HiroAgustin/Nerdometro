@@ -25,6 +25,7 @@
 
 .authForm__input input::placeholder {
   color: white;
+  text-transform: none;
 }
 
 .authForm__input input:focus::placeholder {
