@@ -18,7 +18,7 @@ block content
       +auth()
 
     section.page.page--computing(data-label='computing')
-      #js-spinner.spinner
+      #js-spinner-1.spinner
         .spinner__label
         each question in questions
           each answer in question.answers
@@ -31,7 +31,10 @@ block content
         +question(question)
 
     section.page.page--computing(data-label='computing')
-      h2 Calculando Nivel de Nerd
+      .computing__header
+        h2.computing__header__top Calculando
+        h1.computing__header__bottom Nivel de Nerd
+      #js-spinner-2.spinner
 
     section.page.page--result(data-label='result')
 

@@ -31,3 +31,7 @@
 .spinner__image--selected {
   background-image: linear-gradient(140deg, #5159f5, #049f9d);
 }
+
+.spinner__image--selected img {
+  opacity: 1;
+}

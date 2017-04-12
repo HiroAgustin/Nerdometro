@@ -38,7 +38,9 @@ var Main = {
       $questions: $('.page--question'),
       $answers: $('.answer'),
 
-      $spinner: $('#js-spinner'),
+      $spinner1: $('#js-spinner-1'),
+      $spinner2: $('#js-spinner-2'),
+
       $progress: $('#js-progress'),
     });
 
@@ -74,7 +76,7 @@ var Main = {
   },
 
   tickSpinner: function tickSpinner (config) {
-    this.$spinner
+    this.$spinner1
       .find('.spinner__label')
       .html(config.total - config.current)
       .end()
@@ -109,6 +111,51 @@ var Main = {
       .showPage(2)
       .tickSpinner(config)
       .nextProgress();
+
+    return this;
+  },
+
+  flipSpinner: function flipSpinner (config) {
+    this.$spinner2
+      .find('.spinner__image')
+      .addClass('hide')
+      .eq(config.current)
+      .removeClass('hide');
+
+    config.current++;
+
+    return this;
+  },
+
+  showResult: function showResult (timer) {
+    clearInterval(timer);
+    this.nextPage();
+    return this;
+  },
+
+  endQuiz: function endQuiz () {
+    var config = { total: 10, current: 0, }
+        timer = setInterval(function () {
+          if (config.current < config.total)
+            this.flipSpinner(config);
+          else
+            this.showResult(timer);
+        }.bind(this), 250);
+
+    this.$answers
+      .filter('.answer--isSelected')
+      .find('img')
+      .clone()
+      .wrap(
+        $('<div/>').addClass('spinner__image spinner__image--selected')
+      )
+      .parent()
+      .appendTo(this.$spinner2);
+
+
+    this
+      .nextPage()
+      .flipSpinner(config);
 
     return this;
   },
@@ -213,13 +260,8 @@ var Main = {
     if (step < $questions.last().index())
       this.showQuestion(step - $questions.first().index() + 1);
     else
-      this.nextPage();
+      this.endQuiz();
 
-    return this;
-  },
-
-  showResult: function showResult () {
-    this.showPage(this.$pages.length);
     return this;
   }
 };

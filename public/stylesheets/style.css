@@ -76,8 +76,29 @@ body {
   justify-content: space-around;
 }
 
+.page--computing {
+  flex-direction: row;
+}
+
 .predicate {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.computing__header {
+  margin-right: 10em;
+  text-align: center;
+}
+
+.computing__header__top {
+  font-size: 3em;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.computing__header__bottom {
+  font-size: 4em;
+  font-weight: normal;
+  margin-top: 0;
 }
