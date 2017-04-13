@@ -27,6 +27,10 @@ body {
   padding: .5em 1.5em;
 }
 
+.button:focus {
+  outline: none;
+}
+
 .HolyGrail {
   display: flex;
   min-height: 100vh;

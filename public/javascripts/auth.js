@@ -19,6 +19,8 @@ var Auth = {
     this.$form.submit(this.onSubmit.bind(this));
     this.$keyboards.click(this.onType.bind(this));
 
+    $.ripple('.key', { duration: .4 });
+
     return this;
   },
 
@@ -54,8 +56,6 @@ var Auth = {
       default:
         $input.val($input.val() + String.fromCharCode(key)).focus();
     }
-
-    $target.animateCSS('pulse');
 
     return this;
   },

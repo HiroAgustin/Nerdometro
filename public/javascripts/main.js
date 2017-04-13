@@ -44,6 +44,8 @@ var Main = {
       $progress: $('#js-progress'),
     });
 
+    $.ripple('.button', { duration: .4 });
+
     return this;
   },
 
@@ -58,7 +60,7 @@ var Main = {
       .off('click.start')
       .on('click.start', function (event) {
         event.preventDefault();
-        self.showAuth();
+        setTimeout(self.showAuth.bind(self), 400);
       });
 
     $('#js-skip')
@@ -69,7 +71,7 @@ var Main = {
       });
 
     PubSub.subscribe('user:register', function (label, user) {
-      self.initQuiz();
+      setTimeout(self.initQuiz.bind(self), 400);
     });
 
     return this;

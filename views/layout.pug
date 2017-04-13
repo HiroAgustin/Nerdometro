@@ -4,8 +4,11 @@ html(lang='es')
     title='Nerdometro'
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
-    link(rel='stylesheet', href='/bower_components/animate.css/animate.min.css')
+
     link(rel='stylesheet', href='/bower_components/sanitize-css/sanitize.css')
+    link(rel='stylesheet', href='/bower_components/animate.css/animate.min.css')
+    link(rel='stylesheet', href='/bower_components/Ripple.js/dist/ripple.min.css')
+
     link(rel='stylesheet', href='/stylesheets/questions.css')
     link(rel='stylesheet', href='/stylesheets/keyboard.css')
     link(rel='stylesheet', href='/stylesheets/progress.css')
@@ -13,12 +16,15 @@ html(lang='es')
     link(rel='stylesheet', href='/stylesheets/nerdbar.css')
     link(rel='stylesheet', href='/stylesheets/form.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+
   body.HolyGrail
     block content
 
     script(src='/bower_components/PubSubJS/src/pubsub.js')
     script(src='/bower_components/jquery/dist/jquery.min.js')
     script(src='/bower_components/underscore/underscore-min.js')
+    script(src='/bower_components/Ripple.js/dist/ripple.min.js')
+
     script(src='/javascripts/shuffle.js')
     script(src='/javascripts/auth.js')
     script(src='/javascripts/main.js')
