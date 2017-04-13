@@ -49,6 +49,9 @@
 
 /* Backspace */
 .k8 {
+  font-family: Helvetica;
+  justify-content: flex-start;
+  padding-left: 1em;
   width: 5em;
 }
 
@@ -59,6 +62,8 @@
 }
 
 /* Enter */
-.numeric .k13 {
-  /*width: 80px;*/
+.k13 {
+  background-color: #79adbe;
+  border: none;
+  color: white;
 }
