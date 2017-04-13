@@ -21,6 +21,6 @@
     "underscore": "^1.8.3",
     "PubSubJS": "pubsub-js#^1.5.4",
     "sanitize-css": "^5.0.0",
-    "Ripple.js": "ripplejs#^1.2.1"
+    "Ripple.js": "git://github.com/HiroAgustin/Ripple.js.git#b21248c"
   }
 }
