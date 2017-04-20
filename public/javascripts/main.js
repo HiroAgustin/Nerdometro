@@ -21,6 +21,10 @@ var Main = {
     return this;
   },
 
+  restart: function restart () {
+    location.reload();
+  },
+
   shuffle: function shuffleAnswers () {
     $('.page--question').shuffle().each(function () {
       $(this).find('.answer').shuffle();
@@ -153,6 +157,15 @@ var Main = {
     }, 400);
 
     this.nextPage();
+
+    setTimeout(function () {
+      this.nextPage();
+
+      setTimeout(function () {
+        this.restart();
+      }.bind(this), 8000);
+
+    }.bind(this), 8400);
 
     return this;
   },
