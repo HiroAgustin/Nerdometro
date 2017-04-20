@@ -17,7 +17,7 @@
 
 .nerdBar__content {
   background: linear-gradient(140deg, #ae2383, #d76d85);
-  height: 50%;
+  height: 0%;
   transition: height ease-in-out 1s;
   will-change: height;
 }
