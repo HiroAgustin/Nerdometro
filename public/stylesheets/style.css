@@ -12,11 +12,6 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-body {
-  background: url('/images/background.png') center top no-repeat;
-  background-size: cover;
-}
-
 .hide {
   display: none;
 }
@@ -73,6 +68,8 @@ body {
 
 .page {
   align-items: center;
+  background: url('/images/background.png') center top no-repeat;
+  background-size: cover;
   display: flex;
   flex: 0 0 100vw;
   flex-direction: column;
@@ -81,6 +78,22 @@ body {
 
 .page--home {
   justify-content: space-around;
+}
+
+.page--home.page--loading {
+  background-image: url('/images/home-bg.gif');
+}
+
+.home__show__after {
+  text-align: center;
+}
+
+.home__heading {
+  font-size: 3em;
+  font-weight: normal;
+  margin: 2em 0;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .page--home .logo {

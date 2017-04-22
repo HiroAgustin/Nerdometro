@@ -8,11 +8,13 @@ block content
     img.logo(src='/images/logo.svg')
 
   main.HolyGrail-body
-    section.page.page--home(data-label='home')
-      img(src='/images/introducing.svg')
-      img(src='/images/big-logo.svg')
-
-      button#js-start.button Hacé el test
+    section.page.page--home.page--loading(data-label='home')
+      .home__show__intro
+        img(src='/images/introducing.svg')
+      .home__show__after
+        img(src='/images/big-logo.svg')
+        h1.home__heading Participá por unos lentes <b>MYTHO</b>
+        button#js-start.button Hacé el test
 
     section.page.page--form(data-label='form')
       +auth()
