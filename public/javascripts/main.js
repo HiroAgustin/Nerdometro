@@ -7,10 +7,11 @@ $.fn.extend({
 });
 
 var Main = {
-  results: [],
-  step: 0,
-
   init: function init () {
+
+    this.results = {};
+    this.step = 0;
+
     this
       .shuffle()
       .setDom()
@@ -18,6 +19,10 @@ var Main = {
       .showHome();
 
     return this;
+  },
+
+  restart: function restart () {
+    location.reload();
   },
 
   shuffle: function shuffleAnswers () {
@@ -130,8 +135,38 @@ var Main = {
   },
 
   showResult: function showResult (timer) {
+    var results = this.results,
+        lvl = _.reduce(results, function (memo, num) {
+          return memo + num;
+        }, 0) / _.size(results)
+        name = lvl <= 40 ? '30' : lvl <= '60' ? '50' : lvl <= '80' ? '70' : '90';
+
     clearInterval(timer);
+
+    $('.result__header')
+      .hide()
+      .filter('.result__header--' + name)
+      .show();
+
+    $('.nerdBar__label')
+      .text(lvl + '%');
+
+    setTimeout(function () {
+      $('.nerdBar__content')
+        .height(lvl + '%');
+    }, 400);
+
     this.nextPage();
+
+    setTimeout(function () {
+      this.nextPage();
+
+      setTimeout(function () {
+        this.restart();
+      }.bind(this), 8000);
+
+    }.bind(this), 8400);
+
     return this;
   },
 
@@ -204,7 +239,11 @@ var Main = {
   },
 
   setAnswer: function setAnswer (value) {
-    this.results[this.step] = parseInt(value, 10);
+    var $questions = this.$pages.filter('.page--question'),
+        index = this.step - $questions.first().index() + 1;
+
+    this.results[index] = parseInt(value, 10);
+
     return this;
   },
 
