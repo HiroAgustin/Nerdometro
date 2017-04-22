@@ -22,7 +22,7 @@ var Main = {
   },
 
   restart: function restart () {
-    location.reload();
+    location.reload(true);
   },
 
   shuffle: function shuffleAnswers () {
@@ -61,6 +61,7 @@ var Main = {
       .off('click.start')
       .on('click.start', function (event) {
         event.preventDefault();
+        clearInterval(self.homeInterval);
         setTimeout(self.showAuth.bind(self), 400);
       });
 
@@ -265,8 +266,38 @@ var Main = {
     return this;
   },
 
+  toggleHomeLoading: function toggleHomeLoading () {
+    console.log('toggleHomeLoading');
+
+    var $page = $('.page--home'),
+        $intro = $page.find('.home__show__intro'),
+        $after = $page.find('.home__show__after');
+
+    $page.addClass('page--loading');
+    $intro.show().animateCSS('fadeInDown');
+    $after.hide();
+
+    setTimeout(function () {
+      $intro.animateCSS('fadeOutUp').one('animationend', function () {
+        $intro.hide();
+      });
+
+      $after.show().animateCSS('fadeInDown');
+
+    }, 5000);
+
+    setTimeout(function () {
+      $page.removeClass('page--loading');
+    }, 6000);
+  },
+
   showHome: function showHome () {
     this.showPage(0);
+
+    // this.homeInterval = setInterval(this.toggleHomeLoading.bind(this), 18000);
+
+    this.toggleHomeLoading();
+
     return this;
   },
 
