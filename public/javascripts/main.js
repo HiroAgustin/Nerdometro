@@ -229,7 +229,11 @@ var Main = {
       .one('animationend', this.nextQuestion.bind(this))
       .siblings()
       .removeClass('answer--isSelected')
-      .addClass('animated bounceOut');
+      .addClass('animated bounceOut')
+      .closest('.page--question')
+      .find('.question__predicate')
+      .removeClass('animated fadeInDown')
+      .animateCSS('fadeOutUp');
 
     return this;
   },
