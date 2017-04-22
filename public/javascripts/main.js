@@ -26,12 +26,8 @@ var Main = {
   },
 
   shuffle: function shuffleAnswers () {
-    $('.page--question').shuffle().each(function () {
-      $(this).find('.answer').shuffle();
-    });
-
+    $('.page--question').shuffle();
     $('.progress__step').removeClass('progress__step--active');
-
     return this;
   },
 
