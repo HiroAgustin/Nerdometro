@@ -9,6 +9,7 @@
 }
 
 .nerdBar__label {
+  animation-delay: .5s;
   font-size: 4em;
   margin: 0 0 -.5em;
   text-align: center;

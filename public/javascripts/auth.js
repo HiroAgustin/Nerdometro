@@ -16,6 +16,9 @@ var Auth = {
     this.$name.focus(this.showKeyboard.bind(this));
     this.$tel.focus(this.showKeyboard.bind(this));
 
+    this.$name.blur(this.hideKeyboards.bind(this));
+    this.$tel.blur(this.hideKeyboards.bind(this));
+
     this.$form.submit(this.onSubmit.bind(this));
     this.$keyboards.click(this.onType.bind(this));
 
