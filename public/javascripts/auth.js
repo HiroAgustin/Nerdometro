@@ -51,7 +51,6 @@ var Auth = {
         break;
       case 13:
         this.hideKeyboards();
-        $container.next().find('input').focus();
         break;
       default:
         $input.val($input.val() + String.fromCharCode(key)).focus();
