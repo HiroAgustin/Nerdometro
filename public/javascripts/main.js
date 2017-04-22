@@ -146,7 +146,7 @@ var Main = {
       .show();
 
     $('.nerdBar__label')
-      .text(lvl + '%');
+      .text(Math.round(lvl) + '%');
 
     setTimeout(function () {
       $('.nerdBar__content')
