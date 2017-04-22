@@ -80,8 +80,12 @@ a {
   justify-content: space-around;
 }
 
-.page--home.page--loading {
+.page--home {
   background-image: url('/images/home-bg.gif');
+}
+
+.home__show__intro {
+  position: absolute;
 }
 
 .home__show__after {

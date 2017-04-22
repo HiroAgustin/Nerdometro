@@ -267,36 +267,29 @@ var Main = {
   },
 
   toggleHomeLoading: function toggleHomeLoading () {
-    console.log('toggleHomeLoading');
-
     var $page = $('.page--home'),
         $intro = $page.find('.home__show__intro'),
         $after = $page.find('.home__show__after');
 
-    $page.addClass('page--loading');
-    $intro.show().animateCSS('fadeInDown');
     $after.hide();
+    $intro.show().find('img').animateCSS('fadeInDown');
 
     setTimeout(function () {
-      $intro.animateCSS('fadeOutUp').one('animationend', function () {
+      $intro.find('img').animateCSS('fadeOutUp').one('animationend', function () {
         $intro.hide();
+
+        $after.show().children().css('animation-delay', function () {
+          return $(this).index() * .5 + 's';
+        }).animateCSS('fadeInDown');
       });
-
-      $after.show().animateCSS('fadeInDown');
-
     }, 5000);
-
-    setTimeout(function () {
-      $page.removeClass('page--loading');
-    }, 6000);
   },
 
   showHome: function showHome () {
     this.showPage(0);
 
-    // this.homeInterval = setInterval(this.toggleHomeLoading.bind(this), 18000);
-
     this.toggleHomeLoading();
+    this.homeInterval = setInterval(this.toggleHomeLoading.bind(this), 15000);
 
     return this;
   },
