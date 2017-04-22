@@ -206,7 +206,7 @@ var Main = {
         index = this.step - $questions.first().index() + 1;
 
     this.$progress
-      .attr('data-length', (index + 1) / $questions.length * 100)
+    //   .attr('data-length', (index + 1) / $questions.length * 100)
       .find('.progress__step')
       .eq(index)
       .addClass('progress__step--active');
