@@ -17,6 +17,7 @@
   flex-direction: column;
   flex-basis: 0;
   margin: 2em;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .answer__image {

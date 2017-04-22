@@ -1,11 +1,15 @@
 html {
   color: white;
   font-family: Montserrat;
+  -webkit-overflow-scrolling: touch;
+  /*-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;*/
 }
 
 a {
   color: white;
   font-weight: 300;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -18,14 +22,15 @@ body {
 }
 
 .button {
-    border: 6px solid #fff;
-    border-radius: 2em;
-    color: #fff;
-    font-size: 2em;
-    padding: .5em 1.5em;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    position: relative;
+  border: 6px solid #fff;
+  border-radius: 2em;
+  color: #fff;
+  font-size: 2em;
+  padding: .5em 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .button:focus {
