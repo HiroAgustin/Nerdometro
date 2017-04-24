@@ -34,3 +34,9 @@
   height: 10em;
   justify-content: space-between;
 }
+
+.authForm__link {
+  font-size: 1.25em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
