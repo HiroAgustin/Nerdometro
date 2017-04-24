@@ -2,4 +2,9 @@ mixin answer(answer)
   .answer(data-value=answer.value)
     .answer__image
       img(src=answer.img)
-    p.answer__title #{answer.label}
+
+    if Array.isArray(answer.label)
+      each text in answer.label
+        p.answer__title #{text}
+    else
+      p.answer__title #{answer.label}

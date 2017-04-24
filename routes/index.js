@@ -139,7 +139,7 @@ router.get('/', (req, res, next) =>
             img: '/images/answers/pregunta-6_respuesta-1.svg'
           },
           {
-            label: 'Organizo colectivos ¡y logro que la gente me pague!',
+            label: ['Organizo colectivos', '¡y logro que la gente me pague!'],
             value: 50,
             img: '/images/answers/pregunta-6_respuesta-2.svg'
           },
