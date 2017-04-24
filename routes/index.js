@@ -64,7 +64,7 @@ router.get('/', (req, res, next) =>
             img: '/images/answers/pregunta-3_respuesta-4.svg'
           },
           {
-            label: 'Inglés o Francés',
+            label: 'Inglés o francés',
             value: 50,
             img: '/images/answers/pregunta-3_respuesta-1.svg'
           },
@@ -106,7 +106,7 @@ router.get('/', (req, res, next) =>
         ]
       },
       {
-        predicate: 'Tenés cubo Rubik',
+        predicate: '¿​Tenés cubo Rubik?',
         answers: [
           {
             label: 'No',
@@ -181,7 +181,7 @@ router.get('/', (req, res, next) =>
         ]
       },
       {
-        predicate: 'Qué juegos te entusiasman más:',
+        predicate: '¿​Qué juegos te entusiasman más?',
         answers: [
           {
             label: 'Ludo, damas, robamontón y conga',
