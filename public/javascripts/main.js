@@ -142,11 +142,14 @@ var Main = {
         lvl = _.reduce(results, function (memo, num) {
           return memo + num;
         }, 0) / _.size(results)
-        name = lvl < 40 ? '30' : lvl < '60' ? '50' : lvl < '80' ? '70' : '90';
+        name = lvl < 40 ? '30' : lvl < '60' ? '50' : lvl < '80' ? '70' : '90',
+
+        user = _.last(store.get('users'));
 
     clearInterval(timer);
 
     store.push('results', {
+      user: user,
       answers: results,
       level: Math.round(lvl)
     });
@@ -163,6 +166,9 @@ var Main = {
       $('.nerdBar__content')
         .height(lvl + '%');
     }, 400);
+
+    if (user)
+      $('.result__heading__user').text(user.nombre);
 
     this.nextPage();
 

@@ -112,6 +112,10 @@ a {
   flex-direction: row;
 }
 
+.result__heading__user {
+  margin-left: .25em;
+}
+
 .predicate {
   display: flex;
   flex-direction: column;
