@@ -157,13 +157,13 @@ a {
   display: none;
   position: absolute;
   right: 10%;
+  text-align: center;
 }
 
 .ad__show__after {
   display: none;
   position: absolute;
   right: 10%;
-  text-align: center;
 }
 
 .ad__heading {
