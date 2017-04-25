@@ -76,6 +76,10 @@ var Main = {
       setTimeout(self.initQuiz.bind(self), 400);
     });
 
+    $(document).contextmenu(function (e) {
+      e.preventDefault();
+    });
+
     return this;
   },
 
