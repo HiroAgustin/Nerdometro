@@ -140,7 +140,7 @@ var Main = {
         lvl = _.reduce(results, function (memo, num) {
           return memo + num;
         }, 0) / _.size(results)
-        name = lvl <= 40 ? '30' : lvl <= '60' ? '50' : lvl <= '80' ? '70' : '90';
+        name = lvl < 40 ? '30' : lvl < '60' ? '50' : lvl < '80' ? '70' : '90';
 
     clearInterval(timer);
 
