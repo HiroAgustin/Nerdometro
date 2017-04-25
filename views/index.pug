@@ -69,8 +69,11 @@ block content
         .nerdBar__content
 
     section.page.page--ad(data-label='ad')
-      h1.animated.rollIn Gracias por Participar
-      p.animated.rollIn Mucha suerte si te anotaste al sorteo!
+      .ad__show__intro
+        img(src='/images/ad-logo.svg')
+      .ad__show__after
+        h1.ad__heading Gracias por participar
+        p.ad__copy ¡Mucha suerte si te <br/> anotaste al sorteo!
 
   footer.site__footer
     #js-progress.progress

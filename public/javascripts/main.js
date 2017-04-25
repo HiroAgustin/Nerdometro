@@ -159,14 +159,7 @@ var Main = {
 
     this.nextPage();
 
-    setTimeout(function () {
-      this.nextPage();
-
-      setTimeout(function () {
-        this.restart();
-      }.bind(this), 8000);
-
-    }.bind(this), 8400);
+    setTimeout(this.showAd.bind(this), 8400);
 
     return this;
   },
@@ -296,6 +289,31 @@ var Main = {
     this.homeInterval = setInterval(this.toggleHomeLoading.bind(this), 15000);
 
     return this;
+  },
+
+  showAd: function showAd () {
+    var $page = $('.page--ad'),
+        $intro = $page.find('.ad__show__intro'),
+        $after = $page.find('.ad__show__after');
+
+    $after.hide();
+    $intro.show().find('img').animateCSS('fadeInDown');
+
+    setTimeout(function () {
+      $intro.find('img').animateCSS('fadeOutUp').one('animationend', function () {
+        $intro.hide();
+
+        $after.show().children().css('animation-delay', function () {
+          return $(this).index() * .5 + 's';
+        }).animateCSS('fadeInDown');
+      });
+
+      setTimeout(function () {
+        this.restart();
+      }.bind(this), 6000);
+    }.bind(this), 4000);
+
+    this.nextPage();
   },
 
   showAuth: function showAuth () {
