@@ -16,6 +16,7 @@ var Main = {
       .shuffle()
       .setDom()
       .listen()
+      .setAdBg()
       .showHome();
 
     return this;
@@ -46,6 +47,18 @@ var Main = {
     });
 
     $.ripple('.button', { duration: .4 });
+
+    return this;
+  },
+
+  setAdBg: function setAdBg () {
+    var background = store.get('adBg'),
+        boy = '/images/ad-bg-1.gif',
+        girl = '/images/ad-bg-2.gif';
+
+    store.defaults({ adBg: boy });
+    $('.page--ad').css('background-image', 'url(' + background + ')');
+    store.set('adBg', background === boy ? girl : boy);
 
     return this;
   },
