@@ -69,10 +69,12 @@ var Main = {
       .off('click.skip')
       .on('click.skip', function (event) {
         event.preventDefault();
+        store.push('users', null);
         self.initQuiz();
       });
 
     PubSub.subscribe('user:register', function (label, user) {
+      store.push('users', user);
       setTimeout(self.initQuiz.bind(self), 400);
     });
 
@@ -143,6 +145,11 @@ var Main = {
         name = lvl < 40 ? '30' : lvl < '60' ? '50' : lvl < '80' ? '70' : '90';
 
     clearInterval(timer);
+
+    store.push('results', {
+      answers: results,
+      level: Math.round(lvl)
+    });
 
     $('.result__header')
       .hide()
