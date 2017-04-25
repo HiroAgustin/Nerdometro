@@ -168,7 +168,8 @@ var Main = {
     }, 400);
 
     if (user)
-      $('.result__heading__user').text(user.nombre);
+      $('.result__heading')
+        .append(document.createTextNode(' ' + user.nombre));
 
     this.nextPage();
 
