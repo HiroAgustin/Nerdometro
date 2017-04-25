@@ -159,7 +159,10 @@ var Main = {
 
     this.nextPage();
 
-    setTimeout(this.showAd.bind(this), 8400);
+    setTimeout(function () {
+      $('.result__header:visible, .nerdBar').addClass('animated fadeOutUp');
+      setTimeout(this.showAd.bind(this), 600);
+    }.bind(this), 8400);
 
     return this;
   },
