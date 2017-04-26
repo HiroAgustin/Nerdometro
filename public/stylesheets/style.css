@@ -175,14 +175,14 @@ a {
 }
 
 .ad__heading {
-  font-size: 3em;
+  font-size: 3.5em;
   font-weight: normal;
   text-transform: uppercase;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .ad__copy {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: normal;
   text-transform: uppercase;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
