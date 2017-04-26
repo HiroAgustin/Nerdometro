@@ -82,6 +82,14 @@ a {
   background-image: url('/images/home-bg.gif');
 }
 
+.brand {
+  height: 78px;
+}
+
+.logo {
+  height: 120px;
+}
+
 .page--home .logo {
   opacity: 0;
 }
