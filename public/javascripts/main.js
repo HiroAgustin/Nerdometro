@@ -152,8 +152,8 @@ var Main = {
 
   showResult: function showResult (timer) {
     var results = this.results,
-        lvl = _.reduce(results, function (memo, num) {
-          return memo + num;
+        lvl = _.reduce(results, function (memo, answer) {
+          return memo + answer.value;
         }, 0) / _.size(results)
         name = lvl < 40 ? '30' : lvl < '60' ? '50' : lvl < '80' ? '70' : '90',
 
@@ -248,7 +248,11 @@ var Main = {
       return this;
 
     this
-      .setAnswer($answer.data('value'))
+      .setAnswer({
+        question: $answer.closest('.page--question').find('.question__predicate').text(),
+        answer: $answer.find('.answer__title').text(),
+        value: parseInt($answer.data('value'), 10)
+      })
       .nextProgress();
 
     $answer
@@ -266,11 +270,11 @@ var Main = {
     return this;
   },
 
-  setAnswer: function setAnswer (value) {
+  setAnswer: function setAnswer (answer) {
     var $questions = this.$pages.filter('.page--question'),
         index = this.step - $questions.first().index() + 1;
 
-    this.results[index] = parseInt(value, 10);
+    this.results[index] = answer;
 
     return this;
   },
