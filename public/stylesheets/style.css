@@ -7,6 +7,11 @@ html {
   user-select: none;
 }
 
+body {
+  overflow: hidden;
+  max-height: 100vh;
+}
+
 a {
   color: white;
   font-weight: 300;
