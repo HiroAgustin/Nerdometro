@@ -158,7 +158,8 @@ a {
 }
 
 .page--ad {
-  background-image: url('/images/ad-bg-1.gif');
+  background: url('/images/ad-bg-1.gif') center top no-repeat;
+  background-size: cover;
 }
 
 .ad__show__intro {
