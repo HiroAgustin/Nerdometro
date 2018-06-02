@@ -17,7 +17,7 @@ var Auth = {
     this.$tel.focus(this.showKeyboard.bind(this));
 
     this.$form.submit(this.onSubmit.bind(this));
-    this.$keyboards.click(this.onType.bind(this));
+    this.$keyboards.on('touchstart mousedown', this.onType.bind(this));
 
     $.ripple('.key', { duration: .4 });
 

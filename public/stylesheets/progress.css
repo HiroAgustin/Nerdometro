@@ -43,7 +43,7 @@
 .progress[data-length="100"]::before { width: 100%; }
 
 .progress__step {
-  background: #069D9F;
+  background: #6e0610;
   border: white 3px solid;
   border-radius: 100%;
   display: block;

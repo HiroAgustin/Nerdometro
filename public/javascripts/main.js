@@ -67,20 +67,20 @@ var Main = {
     var self = this;
 
     this.$answers
-      .off('click.answer')
-      .on('click.answer', this.selectAnswer.bind(this));
+      .off('touchstart.answer mousedown.answer')
+      .on('touchstart.answer mousedown.answer', this.selectAnswer.bind(this));
 
     $('#js-start')
-      .off('click.start')
-      .on('click.start', function (event) {
+      .off('touchstart.start mousedown.start')
+      .on('touchstart.start mousedown.start', function (event) {
         event.preventDefault();
         clearInterval(self.homeInterval);
         setTimeout(self.showAuth.bind(self), 400);
       });
 
     $('#js-skip')
-      .off('click.skip')
-      .on('click.skip', function (event) {
+      .off('touchstart.skip mousedown.skip')
+      .on('touchstart.skip mousedown.skip', function (event) {
         event.preventDefault();
         store.push('users', null);
         self.initQuiz();
@@ -155,7 +155,7 @@ var Main = {
         lvl = _.reduce(results, function (memo, answer) {
           return memo + answer.value;
         }, 0) / _.size(results)
-        name = lvl < 40 ? '30' : lvl < '60' ? '50' : lvl < '80' ? '70' : '90',
+        name = lvl < 75 ? '60' : lvl < 90 ? '75' : '90',
 
         user = _.last(store.get('users'));
 
@@ -195,7 +195,7 @@ var Main = {
   },
 
   endQuiz: function endQuiz () {
-    var config = { total: 10, current: 0, }
+    var config = { total: this.$questions.length, current: 0, }
         timer = setInterval(function () {
           if (config.current < config.total)
             this.flipSpinner(config);
