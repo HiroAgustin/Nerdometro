@@ -86,7 +86,8 @@ var Main = {
         self.initQuiz();
       });
 
-    PubSub.subscribe('user:register', function (label, user) {
+    PubSub.subscribe('user.register', function (label, user) {
+      console.log('user', user)
       store.push('users', user);
       setTimeout(self.initQuiz.bind(self), 400);
     });

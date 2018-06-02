@@ -28,7 +28,8 @@ var Auth = {
     event.preventDefault();
 
     if (!this.isSubmitted) {
-      PubSub.publish('user:register', this.serializeForm());
+      console.log('this.serializeForm()', this.serializeForm())
+      PubSub.publish('user.register', this.serializeForm());
       this.isSubmitted = true;
     }
 
