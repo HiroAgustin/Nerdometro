@@ -99,11 +99,6 @@ a {
   opacity: 0;
 }
 
-.home__show__intro {
-  display: none;
-  position: absolute;
-}
-
 .home__show__after {
   display: none;
   text-align: center;
