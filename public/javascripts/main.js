@@ -55,12 +55,12 @@ var Main = {
 
   setAdBg: function setAdBg () {
     var background = store.get('adBg'),
-        boy = '/images/ad-bg-1.gif',
-        girl = '/images/ad-bg-2.gif';
+        first = '/images/ad-bg-1.png',
+        last = '/images/ad-bg-2.png';
 
-    store.defaults({ adBg: boy });
+    store.defaults({ adBg: first });
     $('.page--ad').css('background-image', 'url(' + background + ')');
-    store.set('adBg', background === boy ? girl : boy);
+    store.set('adBg', background === first ? last : first);
 
     return this;
   },
