@@ -91,7 +91,7 @@ const questions = [
         value: 60
       },
       {
-        label: 'Fantastic Beast 2',
+        label: 'Animales Fantásticos 2',
         img: '/images/answers/pregunta-5_respuesta-2.svg',
         value: 80
       },
