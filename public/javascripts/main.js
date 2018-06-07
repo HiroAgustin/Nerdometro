@@ -318,11 +318,13 @@ var Main = {
   },
 
   showAd: function showAd () {
-    var $page = $('.page--ad'),
+    var $header = $('.site__header'),
+        $page = $('.page--ad'),
         $intro = $page.find('.ad__show__intro'),
         $after = $page.find('.ad__show__after');
 
     $after.hide();
+    $header.addClass('animated fadeOutUp');
     $intro.show().children().css('animation-delay', function () {
       return $(this).index() * .5 + 's';
     }).animateCSS('fadeInDown');
