@@ -55,7 +55,8 @@ a {
 
 .site__header {
   align-items: center;
-  display: flex;
+  /*display: flex;*/
+  display: none;
   padding: 1.5em 3em;
   position: absolute;
   justify-content: space-between;
