@@ -83,7 +83,7 @@ var Main = {
       .off('touchstart.skip mousedown.skip')
       .on('touchstart.skip mousedown.skip', function (event) {
         event.preventDefault();
-        store.push('users', 'Anonimo');
+        store.push('users', null);
         self.initQuiz();
       });
 
@@ -328,19 +328,31 @@ var Main = {
       return $(this).index() * .5 + 's';
     }).animateCSS('fadeInDown');
 
-    $page.on('touchstart mousedown', () => this.restart());
-
-    setTimeout(function () {
-      $intro.children().addClass('animated fadeOutUp').last().one('animationend', function () {
-        $intro.hide();
-
-        $after.show().find('img').animateCSS('fadeInDown');
-      });
-
-      setTimeout(function () {
+    const showStuff = function () {
+      const postNext = setTimeout(function () {
         this.restart();
       }.bind(this), 6000);
-    }.bind(this), 4000);
+
+      $page.off('touchstart mousedown');
+
+      $intro.children().addClass('animated fadeOutUp').last().one('animationend', () => {
+        $intro.hide();
+
+        $after.show().find('img').animateCSS('fadeInDown').one('animationend', () => {
+          $page.on('touchstart mousedown', () => {
+            clearTimeout(postNext);
+            this.restart();
+          });
+        });
+      });
+    }.bind(this);
+
+    const next = setTimeout(showStuff, 4000);
+
+    $page.on('touchstart mousedown', () => {
+      clearTimeout(next);
+      showStuff()
+    });
 
     this.nextPage();
   },
