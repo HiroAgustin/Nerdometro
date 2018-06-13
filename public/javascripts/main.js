@@ -1,4 +1,4 @@
-localStorage.clear();
+store.defaults({ adBg: '/images/ad-bg-1.png' });
 
 $.fn.extend({
   animateCSS: function (name) {
@@ -58,7 +58,6 @@ var Main = {
         first = '/images/ad-bg-1.png',
         last = '/images/ad-bg-2.png';
 
-    store.defaults({ adBg: first });
     $('.page--ad').css('background-image', 'url(' + background + ')');
     store.set('adBg', background === first ? last : first);
 
@@ -84,7 +83,7 @@ var Main = {
       .off('touchstart.skip mousedown.skip')
       .on('touchstart.skip mousedown.skip', function (event) {
         event.preventDefault();
-        store.push('users', null);
+        store.push('users', 'Anonimo');
         self.initQuiz();
       });
 
@@ -328,6 +327,8 @@ var Main = {
     $intro.show().children().css('animation-delay', function () {
       return $(this).index() * .5 + 's';
     }).animateCSS('fadeInDown');
+
+    $page.on('touchstart mousedown', () => this.restart());
 
     setTimeout(function () {
       $intro.children().addClass('animated fadeOutUp').last().one('animationend', function () {
