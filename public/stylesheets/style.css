@@ -85,7 +85,7 @@ a {
 
 .page--home {
   justify-content: space-around;
-  background-image: url('/images/home-bg.gif');
+  background-image: url('/images/bg.png');
 }
 
 .brand {
