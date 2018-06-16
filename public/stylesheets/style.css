@@ -2,8 +2,8 @@ html {
   color: white;
   font-family: 'Oswald', sans-serif;
   -webkit-overflow-scrolling: touch;
-  /*-webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   user-select: none;
 }
 
