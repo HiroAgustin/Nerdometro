@@ -8,12 +8,12 @@ const questions = [
       {
         label: 'Fortnite',
         img: '/images/answers/pregunta-1_respuesta-1.svg',
-        value: 60
+        value: 67
       },
       {
         label: 'World of Warcraft',
         img: '/images/answers/pregunta-1_respuesta-2.svg',
-        value: 80
+        value: 88
       },
       {
         label: 'Zelda: Breath of the wild',
@@ -28,12 +28,12 @@ const questions = [
       {
         label: 'Monopoly',
         img: '/images/answers/pregunta-2_respuesta-1.svg',
-        value: 60
+        value: 63
       },
       {
         label: 'WAR',
         img: '/images/answers/pregunta-2_respuesta-2.svg',
-        value: 80
+        value: 84
       },
       {
         label: 'Zombicide',
@@ -48,17 +48,17 @@ const questions = [
       {
         label: 'Casa de Papel',
         img: '/images/answers/pregunta-3_respuesta-1.svg',
-        value: 60
+        value: 62
       },
       {
         label: 'Game of Thrones',
         img: '/images/answers/pregunta-3_respuesta-2.svg',
-        value: 80
+        value: 87
       },
       {
         label: 'Silicon Valley',
         img: '/images/answers/pregunta-3_respuesta-3.svg',
-        value: 100
+        value: 98
       }
     ]
   },
@@ -68,12 +68,12 @@ const questions = [
       {
         label: 'Goku',
         img: '/images/answers/pregunta-4_respuesta-1.svg',
-        value: 60
+        value: 67
       },
       {
         label: 'Naruto',
         img: '/images/answers/pregunta-4_respuesta-2.svg',
-        value: 80
+        value: 82
       },
       {
         label: 'Saitama',
@@ -88,17 +88,17 @@ const questions = [
       {
         label: 'Avatar 2',
         img: '/images/answers/pregunta-5_respuesta-1.svg',
-        value: 60
+        value: 63
       },
       {
         label: 'Animales Fantásticos 2',
         img: '/images/answers/pregunta-5_respuesta-2.svg',
-        value: 80
+        value: 81
       },
       {
         label: 'Avengers Infinity War 2',
         img: '/images/answers/pregunta-5_respuesta-3.svg',
-        value: 100
+        value: 99
       }
     ]
   }
