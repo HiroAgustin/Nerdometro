@@ -156,7 +156,7 @@ var Main = {
         lvl = _.reduce(results, function (memo, answer) {
           return memo + answer.value;
         }, 0) / _.size(results)
-        name = lvl < 75 ? '60' : lvl < 90 ? '75' : '90',
+        name = lvl <= 80 ? '70' : lvl < 90 ? '80' : '90',
 
         user = _.last(store.get('users'));
 

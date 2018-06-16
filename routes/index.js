@@ -37,12 +37,12 @@ const questions = [
       {
         label: 'Monopoly',
         img: '/images/answers/pregunta-2_respuesta-1.svg',
-        value: 63
+        value: 56
       },
       {
         label: 'WAR',
         img: '/images/answers/pregunta-2_respuesta-2.svg',
-        value: 84
+        value: 79
       },
       {
         label: 'Zombicide',
@@ -57,12 +57,12 @@ const questions = [
       {
         label: 'Casa de Papel',
         img: '/images/answers/pregunta-3_respuesta-1.svg',
-        value: 62
+        value: 57
       },
       {
         label: 'Game of Thrones',
         img: '/images/answers/pregunta-3_respuesta-2.svg',
-        value: 87
+        value: 88
       },
       {
         label: 'Silicon Valley',
@@ -77,12 +77,12 @@ const questions = [
       {
         label: 'Goku',
         img: '/images/answers/pregunta-4_respuesta-1.svg',
-        value: 67
+        value: 73
       },
       {
         label: 'Naruto',
         img: '/images/answers/pregunta-4_respuesta-2.svg',
-        value: 82
+        value: 89
       },
       {
         label: 'Saitama',
@@ -102,7 +102,7 @@ const questions = [
       {
         label: 'Animales Fantásticos 2',
         img: '/images/answers/pregunta-5_respuesta-2.svg',
-        value: 81
+        value: 87
       },
       {
         label: 'Avengers Infinity War 2',
