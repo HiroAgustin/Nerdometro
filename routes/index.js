@@ -1,10 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
+function shuffle(collection) {
+  for (let i = collection.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [collection[i], collection[j]] = [collection[j], collection[i]];
+  }
+
+  return collection;
+}
+
 const questions = [
   {
     predicate: 'Video Juego:',
-    answers: [
+    answers: shuffle([
       {
         label: 'Fortnite',
         img: '/images/answers/pregunta-1_respuesta-1.svg',
@@ -20,11 +29,11 @@ const questions = [
         img: '/images/answers/pregunta-1_respuesta-3.svg',
         value: 100
       }
-    ]
+    ])
   },
   {
     predicate: 'Juego de Mesa:',
-    answers: [
+    answers: shuffle([
       {
         label: 'Monopoly',
         img: '/images/answers/pregunta-2_respuesta-1.svg',
@@ -40,11 +49,11 @@ const questions = [
         img: '/images/answers/pregunta-2_respuesta-3.svg',
         value: 100
       }
-    ]
+    ])
   },
   {
     predicate: 'Series:',
-    answers: [
+    answers: shuffle([
       {
         label: 'Casa de Papel',
         img: '/images/answers/pregunta-3_respuesta-1.svg',
@@ -58,13 +67,13 @@ const questions = [
       {
         label: 'Silicon Valley',
         img: '/images/answers/pregunta-3_respuesta-3.svg',
-        value: 98
+        value: 100
       }
-    ]
+    ])
   },
   {
     predicate: 'Shonen Champion:',
-    answers: [
+    answers: shuffle([
       {
         label: 'Goku',
         img: '/images/answers/pregunta-4_respuesta-1.svg',
@@ -80,11 +89,11 @@ const questions = [
         img: '/images/answers/pregunta-4_respuesta-3.svg',
         value: 100
       }
-    ]
+    ])
   },
   {
     predicate: 'La quiero ver ya:',
-    answers: [
+    answers: shuffle([
       {
         label: 'Avatar 2',
         img: '/images/answers/pregunta-5_respuesta-1.svg',
@@ -98,9 +107,9 @@ const questions = [
       {
         label: 'Avengers Infinity War 2',
         img: '/images/answers/pregunta-5_respuesta-3.svg',
-        value: 99
+        value: 100
       }
-    ]
+    ])
   }
 ];
 
