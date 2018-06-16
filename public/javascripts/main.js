@@ -187,10 +187,20 @@ var Main = {
 
     this.nextPage();
 
-    setTimeout(function () {
+    const $page = $('.page:visible');
+
+    const showStuff = () => {
+      $page.off('touchstart mousedown');
       $('.result__header:visible, .nerdBar').addClass('animated fadeOutUp');
       setTimeout(this.showAd.bind(this), 600);
-    }.bind(this), 8400);
+    }
+
+    const next = setTimeout(showStuff, 6400);
+
+    $page.on('touchstart mousedown', () => {
+      clearTimeout(next);
+      showStuff()
+    });
 
     return this;
   },
