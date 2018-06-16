@@ -1,10 +1,11 @@
 html {
   color: white;
+  cursor: none;
   font-family: 'Oswald', sans-serif;
+  user-select: none;
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  user-select: none;
 }
 
 body {
