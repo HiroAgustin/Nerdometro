@@ -132,7 +132,7 @@ const questions = [
     ]),
   },
   {
-    predicate: 'Aprenderías:',
+    predicate: 'Aprendería:',
     answers: shuffle([
       {
         label: 'Cocina',
